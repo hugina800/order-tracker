@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>訂單到貨查詢</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "微軟正黑體", "PingFang TC", sans-serif;
+         background: #f0f2f5; color: #333; font-size: 14px; }
+
+  /* ── 登入頁 ── */
+  #loginPage { display: flex; align-items: center; justify-content: center;
+               min-height: 100vh; background: linear-gradient(135deg, #1a1a2e, #16213e); }
+  .login-box { background: white; border-radius: 14px; padding: 40px 36px;
+               width: 340px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+  .login-box h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .login-box p  { font-size: 12px; color: #aaa; margin-bottom: 28px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 12px; color: #666; margin-bottom: 6px; font-weight: 600; }
+  .field input { width: 100%; padding: 10px 14px; border: 1.5px solid #e0e0e0;
+                 border-radius: 8px; font-size: 14px; outline: none; transition: border .2s; }
+  .field input:focus { border-color: #2980b9; }
+  .btn-login { width: 100%; padding: 12px; background: linear-gradient(135deg, #2980b9, #1a5276);
+               color: white; border: none; border-radius: 8px; font-size: 15px;
+               font-weight: 700; cursor: pointer; margin-top: 8px; transition: opacity .2s; }
+  .btn-login:hover { opacity: 0.9; }
+  .btn-login:disabled { opacity: 0.5; cursor: not-allowed; }
+  #loginError { color: #e74c3c; font-size: 12px; margin-top: 10px; text-align: center; }
+
+  /* ── 主頁 ── */
+  #mainPage { display: none; }
+  .header { background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white; padding: 18px 24px; display: flex; align-items: center;
+            justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .header h1 { font-size: 17px; font-weight: 700; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .btn-refresh { padding: 8px 18px; background: rgba(255,255,255,0.15);
+                 color: white; border: 1.5px solid rgba(255,255,255,0.3);
+                 border-radius: 20px; font-size: 13px; font-weight: 600;
+                 cursor: pointer; transition: background .2s; }
+  .btn-refresh:hover { background: rgba(255,255,255,0.25); }
+  .btn-refresh:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-logout { padding: 6px 14px; background: transparent;
+                color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2);
+                border-radius: 20px; font-size: 12px; cursor: pointer; }
+  .btn-logout:hover { color: white; border-color: rgba(255,255,255,0.5); }
+  .updated { font-size: 11px; opacity: 0.5; }
+
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 18px 20px; }
+
+  /* ── 統計卡 ── */
+  .cards { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .card { background: white; border-radius: 10px; padding: 14px 18px;
+          flex: 1; min-width: 90px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+          border-top: 3px solid transparent; }
+  .card.c7  { border-color: #e67e22; } .card.c7  .num { color: #e67e22; }
+  .card.cfm { border-color: #27ae60; } .card.cfm .num { color: #27ae60; }
+  .card.chm { border-color: #2980b9; } .card.chm .num { color: #2980b9; }
+  .card.ctr { border-color: #8e44ad; } .card.ctr .num { color: #8e44ad; }
+  .card.cdn { border-color: #95a5a6; } .card.cdn .num { color: #95a5a6; }
+  .num   { font-size: 26px; font-weight: 700; }
+  .clabel { font-size: 11px; color: #999; margin-top: 2px; }
+
+  /* ── 提示 ── */
+  .note { background: #fff8e1; border-left: 4px solid #f39c12;
+          padding: 9px 14px; border-radius: 0 6px 6px 0;
+          font-size: 12px; color: #777; margin-bottom: 14px; }
+
+  /* ── 表格 ── */
+  .panel { background: white; border-radius: 10px;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+  .toolbar { display: flex; align-items: center; justify-content: space-between;
+             padding: 12px 16px; border-bottom: 1px solid #f0f0f0; gap: 10px; flex-wrap: wrap; }
+  .toolbar h2 { font-size: 14px; font-weight: 600; color: #444; }
+  .search { padding: 6px 14px; border: 1.5px solid #e0e0e0; border-radius: 20px;
+            font-size: 12px; outline: none; width: 220px; transition: border .2s; }
+  .search:focus { border-color: #2980b9; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #f7f8fa; color: #666; font-size: 11px; font-weight: 700;
+       padding: 10px 13px; text-align: left; border-bottom: 2px solid #eee; white-space: nowrap; }
+  td { padding: 10px 13px; border-bottom: 1px solid #f4f4f4; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafbff; }
+  .td-order { font-family: monospace; font-size: 12px; color: #888; }
+  .td-receiver { font-size: 13px; font-weight: 600; }
+  .td-phone { font-size: 11px; color: #aaa; font-weight: 400; }
+  .td-logistics { font-weight: 600; }
+  .td-shop { font-size: 11px; color: #aaa; font-weight: 400; display: block; }
+  .td-tracking { font-family: monospace; font-size: 11px; color: #666; }
+  .td-product { font-size: 11px; color: #888; max-width: 150px;
+                overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .td-arrival { font-weight: 700; color: #2980b9; }
+  .td-return { font-weight: 700; font-size: 14px; color: #27ae60; }
+  .td-return.warn { color: #e67e22; }
+  .td-return.urgent { color: #e74c3c; animation: pulse 1.4s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.45} }
+  .badge { display: inline-flex; align-items: center; gap: 3px;
+           padding: 3px 9px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .badge.transit   { background: #eaf2fb; color: #2980b9; }
+  .badge.done      { background: #eafaf1; color: #27ae60; }
+  .badge.pending   { background: #fef9e7; color: #e67e22; }
+  .badge.cancelled { background: #fce4ec; color: #e74c3c; }
+  .badge.other     { background: #f5f5f5; color: #888; }
+  .badge.warn-badge { background: #fff3cd; color: #856404; }
+  .badge.unpicked   { background: #fff3e0; color: #e65100; }
+  a.td-tracking    { color: #2980b9; text-decoration: none; cursor: pointer; }
+  a.td-tracking:hover { text-decoration: underline; }
+
+  .copy-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+                background: #2c3e50; color: white; padding: 10px 20px; border-radius: 20px;
+                font-size: 13px; font-weight: 600; opacity: 0; pointer-events: none;
+                transition: opacity .3s; z-index: 9999; }
+  .empty { text-align: center; padding: 40px; color: #ccc; font-size: 14px; }
+
+  /* ── 載入動畫 ── */
+  #loading { display: none; text-align: center; padding: 60px 20px; }
+  .spinner { width: 36px; height: 36px; border: 3px solid #eee;
+             border-top-color: #2980b9; border-radius: 50%;
+             animation: spin .8s linear infinite; margin: 0 auto 14px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- 登入頁 -->
+<div id="loginPage">
+  <div class="login-box">
+    <h1>📦 訂單到貨查詢</h1>
+    <p>請使用 Globemerce 帳號登入</p>
+    <div class="field">
+      <label>帳號</label>
+      <input id="username" type="text" placeholder="輸入帳號" autocomplete="username">
+    </div>
+    <div class="field">
+      <label>密碼</label>
+      <input id="password" type="password" placeholder="輸入密碼" autocomplete="current-password">
+    </div>
+    <button class="btn-login" id="btnLogin" onclick="doLogin()">登入</button>
+    <div id="loginError"></div>
+  </div>
+</div>
+
+<!-- 主頁 -->
+<div id="mainPage">
+  <div class="header">
+    <div>
+      <h1>📦 訂單到貨查詢</h1>
+      <div class="updated" id="updatedAt"></div>
+    </div>
+    <div class="header-right">
+      <button class="btn-refresh" id="btnRefresh" onclick="loadOrders()">🔄 重新整理</button>
+      <button class="btn-logout" onclick="doLogout()">登出</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div id="loading">
+      <div class="spinner"></div>
+      <div style="color:#aaa;font-size:13px">載入中，請稍候…</div>
+    </div>
+
+    <div id="content" style="display:none">
+      <div class="cards">
+        <div class="card c7"><div class="num" id="cnt7">0</div><div class="clabel">7-11 訂單</div></div>
+        <div class="card cfm"><div class="num" id="cntFM">0</div><div class="clabel">全家訂單</div></div>
+        <div class="card chm"><div class="num" id="cntHome">0</div><div class="clabel">宅配/郵局</div></div>
+        <div class="card ctr"><div class="num" id="cntTransit">0</div><div class="clabel">⚠️ 待確認</div></div>
+        <div class="card cdn"><div class="num" id="cntDone">0</div><div class="clabel">✅ 確認到貨</div></div>
+      </div>
+
+      <div class="note">
+        ✅ <strong>已到貨</strong>：COD 超商取件完成，日期為實際取件日。
+        ⚠️ <strong>待確認</strong>：信用卡付款宅配，Globemerce「已完成」只是付款確認，請點 🔗 查詢實際物流狀態。
+        🚚 <strong>運送中</strong>：尚未到貨，點 🔗 可查即時物流進度。
+        <strong>最後退貨日</strong> = 到貨日 + 7天。
+        <span style="color:#e74c3c">●</span> 2天內到期
+      </div>
+
+      <div class="panel">
+        <div class="toolbar">
+          <h2>訂單明細（<span id="totalCount">0</span> 筆）</h2>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <select id="statusFilter" onchange="filterTable()"
+                    style="padding:6px 12px;border:1.5px solid #e0e0e0;border-radius:20px;
+                           font-size:12px;outline:none;background:white;cursor:pointer">
+              <option value="all">全部</option>
+              <option value="done">✅ 已到貨</option>
+              <option value="unpicked">🏪 到貨但未取貨</option>
+              <option value="need_check">⚠️ 待確認</option>
+              <option value="transit">🚚 運送中</option>
+            </select>
+            <input class="search" id="searchBox" type="text"
+                   placeholder="🔍 搜尋收件人、追蹤單號…"
+                   oninput="filterTable()">
+          </div>
+        </div>
+        <table>
+          <thead><tr>
+            <th>訂單編號</th>
+            <th>收件人</th>
+            <th>配送方式</th>
+            <th>追蹤單號</th>
+            <th>商品</th>
+            <th>下單日期</th>
+            <th>預計到貨</th>
+            <th>最後退貨日</th>
+            <th>狀態</th>
+          </tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'https://gateway.globemerce.com';
+let TOKEN = localStorage.getItem('gm_token') || '';
+let USERNAME_DISPLAY = localStorage.getItem('gm_user') || '';
+
+const DELIVERY_DAYS = { '7-Eleven': 2, 'FamilyMart': 2, '全家': 2, 'HCT': 3, 'Post': 4 };
+const RETURN_DAYS = 7;
+
+// ── 初始化 ──
+window.onload = () => {
+  if (TOKEN) {
+    showMain();
+    loadOrders();
+  }
+  document.getElementById('password').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doLogin();
+  });
+};
+
+// ── 登入 ──
+async function doLogin() {
+  const u = document.getElementById('username').value.trim();
+  const p = document.getElementById('password').value;
+  const btn = document.getElementById('btnLogin');
+  const err = document.getElementById('loginError');
+
+  if (!u || !p) { err.textContent = '請輸入帳號和密碼'; return; }
+
+  btn.disabled = true;
+  btn.textContent = '登入中…';
+  err.textContent = '';
+
+  try {
+    const res = await fetch(`${API}/user/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: u, password: p, platform: 'FIV5S Web' })
+    });
+    const data = await res.json();
+    if (data.status === true && data.data?.token) {
+      TOKEN = data.data.token;
+      localStorage.setItem('gm_token', TOKEN);
+      localStorage.setItem('gm_user', u);
+      USERNAME_DISPLAY = u;
+      showMain();
+      loadOrders();
+    } else {
+      err.textContent = data.message || '帳號或密碼錯誤';
+    }
+  } catch (e) {
+    err.textContent = '連線失敗，請稍後再試';
+  }
+
+  btn.disabled = false;
+  btn.textContent = '登入';
+}
+
+// ── 登出 ──
+function doLogout() {
+  TOKEN = '';
+  localStorage.removeItem('gm_token');
+  localStorage.removeItem('gm_user');
+  document.getElementById('mainPage').style.display = 'none';
+  document.getElementById('loginPage').style.display = 'flex';
+}
+
+// ── 顯示主頁 ──
+function showMain() {
+  document.getElementById('loginPage').style.display = 'none';
+  document.getElementById('mainPage').style.display = 'block';
+}
+
+// ── 取得所有訂單 ──
+async function fetchAllOrders() {
+  const now = new Date();
+  const dateTo = fmt(now);
+  const dateFrom = fmt(new Date(now - 30 * 86400000));
+  let allOrders = [];
+  let page = 1, totalPages = 999;
+
+  while (page <= totalPages) {
+    const params = new URLSearchParams({
+      periodFrom: dateFrom, periodTo: dateTo,
+      country_code: 'TWTW', client_code: 'All',
+      page_size: 50, page
+    });
+    const res = await fetch(`${API}/myorder/all/listing?${params}`, {
+      headers: { Authorization: `Bearer ${TOKEN}` }
+    });
+    if (res.status === 401) { doLogout(); throw new Error('登入已過期'); }
+    const data = await res.json();
+    const orders = data.data || [];
+    const pag = data.pagination || {};
+    totalPages = parseInt(pag.total_page || 1);
+    if (!orders.length) break;
+    allOrders = allOrders.concat(orders);
+    page++;
+  }
+  return allOrders;
+}
+
+// ── 載入並渲染 ──
+async function loadOrders() {
+  const btn = document.getElementById('btnRefresh');
+  btn.disabled = true;
+  btn.textContent = '載入中…';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('content').style.display = 'none';
+
+  try {
+    const orders = await fetchAllOrders();
+    renderOrders(orders);
+  } catch (e) {
+    alert(e.message || '載入失敗');
+  }
+
+  btn.disabled = false;
+  btn.textContent = '🔄 重新整理';
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+  document.getElementById('updatedAt').textContent = '更新：' + fmtDt(new Date());
+}
+
+// ── 判斷訂單狀態分類 ──
+function getOrderCategory(o) {
+  const dtype = classify(o)[0];
+  const isConvStore = ['7-11','全家','超商'].includes(dtype);
+
+  // COD 超商：Completed = 客戶已取件
+  if (o.courier_type === 'cod' && o.status_word === 'Completed'
+      && o.donedate && !o.donedate.startsWith('0000')) return 'done';
+
+  // COD 超商：Delivering = 可能已到門市但未取件
+  if (o.courier_type === 'cod' && o.status_word === 'Delivering' && isConvStore) {
+    const created = new Date(o.created?.replace(' ','T') || '');
+    const daysSince = (Date.now() - created.getTime()) / 86400000;
+    // 下單超過 2 天：很可能已到門市
+    if (daysSince >= 2) return 'unpicked';
+  }
+
+  // Payment Link：Completed 只是付款確認
+  if (o.is_payment_link == 1 && o.status_word === 'Completed') return 'need_check';
+
+  return 'transit';
+}
+
+// ── 舊函式保持相容 ──
+function isRealArrival(o) { return getOrderCategory(o); }
+
+// ── 取得追蹤連結 ──
+function trackingUrl(o) {
+  const courier = o.courier_name || '';
+  const code = o.tracking_code || '';
+  if (!code) return null;
+  if (/HCT|新竹/i.test(courier)) return 'https://www.hct.com.tw/Search/SearchGoods_n.aspx';
+  if (/Post|郵局/i.test(courier)) return `https://postserv.post.gov.tw/psttracking/web/trackGoWeb?id=${code}`;
+  if (/7-?eleven/i.test(o.shop_type_name)) return 'https://eservice.7-11.com.tw/e-tracking/search.aspx';
+  if (/family|全家/i.test(o.shop_type_name)) return 'https://fmec.famiport.com.tw/FP_Entrance/QueryBox';
+  return null;
+}
+
+// ── 複製單號並開啟追蹤頁 ──
+function openTracking(url, code) {
+  navigator.clipboard.writeText(code).catch(() => {
+    // fallback: create temp input
+    const el = document.createElement('textarea');
+    el.value = code;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  });
+  showToast(`已複製 ${code}，請貼到查詢框`);
+  window.open(url, '_blank');
+}
+
+// ── 渲染訂單 ──
+function renderOrders(orders) {
+  const RELEVANT = ['7-11', '全家', '超商', '宅配', '郵局'];
+  const counts = { '7-11': 0, '全家': 0, '宅配/郵局': 0, '待確認': 0, '已到貨': 0, '未取貨': 0 };
+
+  // 先過濾再依下單日期由新到舊排序
+  const filtered = orders
+    .filter(o => RELEVANT.includes(classify(o)[0].split('(')[0]))
+    .sort((a, b) => new Date(b.created || 0) - new Date(a.created || 0));
+
+  const rows = [];
+
+  for (const o of filtered) {
+    const [dtype, shopName] = classify(o);
+
+    if (dtype.includes('7-11'))   counts['7-11']++;
+    else if (dtype.includes('全家')) counts['全家']++;
+    else if (['宅配','郵局'].includes(dtype)) counts['宅配/郵局']++;
+
+    const products = (o.order_detail || [])
+      .filter(d => !d.product_name?.startsWith('TW-DISCOUNT'))
+      .slice(0, 2).map(d => d.product_name || '').join(', ');
+    const phone = o.receiver_mobile_prefix
+      ? `+${o.receiver_mobile_prefix} ${o.receiver_mobile}`
+      : o.receiver_mobile || '';
+    const shopHtml = shopName ? `<span class="td-shop">${shopName}</span>` : '';
+    const tracking = o.tracking_code || '—';
+    const tUrl = trackingUrl(o);
+    const trackingHtml = tUrl
+      ? `<a class="td-tracking" onclick="openTracking('${tUrl}','${tracking}')" title="點擊複製單號並開啟查詢頁">${tracking} 🔗</a>`
+      : `<span class="td-tracking">${tracking}</span>`;
+
+    const category = getOrderCategory(o);
+
+    // ── 計算到貨/退貨日 ──
+    let arrivalStr = '—', returnStr = '—', returnClass = '';
+    if (category === 'done' && o.donedate && !o.donedate.startsWith('0000')) {
+      counts['已到貨']++;
+      arrivalStr = o.donedate.slice(0, 10);
+      const retD = new Date(o.donedate.replace(' ','T'));
+      retD.setDate(retD.getDate() + 7);
+      returnStr = fmtMD(retD);
+      returnClass = urgency(returnStr);
+    } else if (category === 'unpicked') {
+      counts['未取貨']++;
+    } else if (category === 'need_check') {
+      counts['待確認']++;
+    }
+
+    // ── 行樣式與 badge ──
+    let rowStyle = '', badge = '';
+    if (category === 'done') {
+      badge = `<span class="badge done">✅ 已到貨</span>`;
+    } else if (category === 'unpicked') {
+      rowStyle = 'background:#fff3e0';
+      badge = `<span class="badge unpicked">🏪 到貨待取件</span>`;
+    } else if (category === 'need_check') {
+      rowStyle = 'background:#fffbf0';
+      badge = `<span class="badge warn-badge">⚠️ 待確認</span>`;
+    } else {
+      rowStyle = 'opacity:0.55';
+      badge = `<span class="badge transit">🚚 運送中</span>`;
+    }
+
+    rows.push(`<tr style="${rowStyle}" data-status="${category}">
+      <td class="td-order">#${o.o_id}</td>
+      <td><span class="td-receiver">${o.receiver_name || '—'}</span><br>
+          <span class="td-phone">${phone}</span></td>
+      <td class="td-logistics">${dtype}${shopHtml}</td>
+      <td>${trackingHtml}</td>
+      <td class="td-product" title="${products}">${products || '—'}</td>
+      <td>${(o.created || '').slice(0, 10)}</td>
+      <td class="td-arrival">${arrivalStr}</td>
+      <td class="td-return ${returnClass}">${returnStr}</td>
+      <td>${badge}</td>
+    </tr>`);
+  }
+
+  document.getElementById('cnt7').textContent = counts['7-11'];
+  document.getElementById('cntFM').textContent = counts['全家'];
+  document.getElementById('cntHome').textContent = counts['宅配/郵局'];
+  document.getElementById('cntTransit').textContent = counts['待確認'];
+  document.getElementById('cntDone').textContent = counts['已到貨'];
+
+  document.getElementById('totalCount').textContent =
+    `${counts['已到貨']} 已到貨 ／ ${counts['未取貨']} 到貨待取件 ／ ${counts['待確認']} 待確認`;
+  document.getElementById('tbody').innerHTML =
+    rows.length ? rows.join('') : '<tr><td colspan="9" class="empty">查無相關訂單</td></tr>';
+}
+
+// ── 篩選（下拉 + 搜尋）──
+function filterTable() {
+  const q    = document.getElementById('searchBox').value.toLowerCase();
+  const cat  = document.getElementById('statusFilter').value;
+  document.querySelectorAll('#tbody tr').forEach(tr => {
+    const matchCat    = cat === 'all' || tr.dataset.status === cat;
+    const matchSearch = tr.textContent.toLowerCase().includes(q);
+    tr.style.display  = (matchCat && matchSearch) ? '' : 'none';
+  });
+}
+
+// ── 複製提示 ──
+function showToast(msg) {
+  let t = document.getElementById('copyToast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'copyToast';
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#2c3e50;color:#fff;padding:10px 22px;border-radius:20px;font-size:13px;font-weight:600;z-index:9999;transition:opacity .3s;';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1';
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.style.opacity = '0', 2500);
+}
+
+// ── 輔助函式 ──
+function classify(o) {
+  const st = o.shop_type_name || '';
+  const sn = o.shop_name || '';
+  const c  = o.courier_name || '';
+  if (/7-?eleven/i.test(st)) return ['7-11', sn];
+  if (/family.?mart|全家/i.test(st)) return ['全家', sn];
+  if (st) return [`超商(${st})`, sn];
+  if (/HCT|宅配通/i.test(c)) return ['宅配', ''];
+  if (/post|郵局|EMS/i.test(c)) return ['郵局', ''];
+  if (/QSY|self.?collect/i.test(c)) return ['超商', sn];
+  return ['其他', ''];
+}
+
+function getDates(o, dtype) {
+  let arrival = null;
+  if (o.donedate && !o.donedate.startsWith('0000')) {
+    arrival = new Date(o.donedate.replace(' ', 'T'));
+  } else if (o.created) {
+    const days = /HCT|宅配|郵局|Post/.test(dtype) ? 3 : 2;
+    arrival = new Date(o.created.replace(' ', 'T'));
+    arrival.setDate(arrival.getDate() + days);
+  }
+  if (!arrival) return ['—', '—'];
+  const ret = new Date(arrival);
+  ret.setDate(ret.getDate() + RETURN_DAYS);
+  return [fmtMD(arrival), fmtMD(ret)];
+}
+
+function getStatus(o) {
+  const w = o.status_word || '';
+  if (/delivering/i.test(w)) return ['🚚 運送中', 'transit'];
+  if (/completed/i.test(w)) return ['✅ 已完成', 'done'];
+  if (/pending|processing/i.test(w)) return ['📦 待出貨', 'pending'];
+  if (/cancel/i.test(w)) return ['❌ 已取消', 'cancelled'];
+  return [w || '—', 'other'];
+}
+
+function urgency(dateStr) {
+  if (dateStr === '—') return '';
+  try {
+    const d = new Date(`${new Date().getFullYear()}/${dateStr}`);
+    const diff = (d - new Date()) / 86400000;
+    if (diff <= 2) return 'urgent';
+    if (diff <= 5) return 'warn';
+  } catch(e) {}
+  return '';
+}
+
+function fmt(d) {
+  return d.toISOString().slice(0, 10);
+}
+function fmtMD(d) {
+  return `${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}`;
+}
+function fmtDt(d) {
+  return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+</script>
+</body>
+</html>
