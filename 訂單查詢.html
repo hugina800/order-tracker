@@ -509,11 +509,10 @@ function renderOrders(orders) {
       returnClass = urgency(returnStr);
     } else if (category === 'unpicked') {
       counts['未取貨']++;
-      if (o.created) {
-        const arrD = new Date(o.created.replace(' ', 'T'));
-        arrD.setDate(arrD.getDate() + 2);
-        arrivalStr = `${arrD.getMonth()+1}/${String(arrD.getDate()).padStart(2,'0')} 估`;
-        const retD = new Date(arrD);
+      const cached = HCT_CACHE[o.tracking_code];
+      if (cached && cached.date) {
+        arrivalStr = cached.date;
+        const retD = new Date(cached.date);
         retD.setDate(retD.getDate() + 7);
         returnStr = fmtMD(retD);
         returnClass = urgency(returnStr);
