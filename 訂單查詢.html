@@ -185,7 +185,7 @@
                     style="padding:6px 12px;border:1.5px solid #e0e0e0;border-radius:20px;
                            font-size:12px;outline:none;background:white;cursor:pointer">
               <option value="all">全部</option>
-              <option value="done">✅ 已到貨</option>
+              <option value="done">✅ 已完成取件 / 已送達</option>
               <option value="unpicked">🏪 到貨但未取貨</option>
               <option value="need_check">⚠️ 待確認</option>
               <option value="transit">🚚 運送中</option>
@@ -442,7 +442,10 @@ function renderOrders(orders) {
     // ── 行樣式與 badge ──
     let rowStyle = '', badge = '';
     if (category === 'done') {
-      badge = `<span class="badge done">✅ 已到貨</span>`;
+      const isConvStore = ['7-11','全家','超商'].includes(dtype);
+      badge = isConvStore
+        ? `<span class="badge done">✅ 已完成取件</span>`
+        : `<span class="badge done">✅ 已送達</span>`;
     } else if (category === 'unpicked') {
       rowStyle = 'background:#fff3e0';
       badge = `<span class="badge unpicked">🏪 到貨待取件</span>`;
