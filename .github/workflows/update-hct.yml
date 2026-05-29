@@ -5,6 +5,9 @@ on:
     - cron: '0 1 * * *'   # 每天 09:00 台灣時間（UTC+8 = UTC 01:00）
   workflow_dispatch:        # 也可以在 GitHub 上手動觸發
 
+permissions:
+  contents: write           # 允許 Actions 推回 hct_status.json
+
 jobs:
   check-delivery:
     runs-on: ubuntu-latest
