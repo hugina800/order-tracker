@@ -173,11 +173,11 @@
       </div>
 
       <div class="note">
-        ✅ <strong>已到貨</strong>：COD 超商取件完成，日期為實際取件日。
-        ⚠️ <strong>待確認</strong>：信用卡付款宅配，Globemerce「已完成」只是付款確認，請點 🔗 查詢實際物流狀態。
-        🚚 <strong>運送中</strong>：尚未到貨，點 🔗 可查即時物流進度。
+        ✅ 已確認到貨（Globemerce 或 HCT 查詢確認）。
+        ⚠️ <strong>待確認</strong>：信用卡宅配，需跑 <code>check_delivery.py</code> 更新 HCT 狀態。
+        🏪 到貨待取件：包裹已到門市，客人尚未取件。
         <strong>最後退貨日</strong> = 到貨日 + 7天。
-        <span style="color:#e74c3c">●</span> 2天內到期
+        <span style="color:#e74c3c">●</span> 2天內到期　｜　<span id="hctUpdated" style="color:#888;font-size:11px"></span>
       </div>
 
       <div class="panel">
@@ -226,7 +226,8 @@ const DELIVERY_DAYS = { '7-Eleven': 2, 'FamilyMart': 2, '全家': 2, 'HCT': 3, '
 const RETURN_DAYS = 7;
 
 // ── 初始化 ──
-window.onload = () => {
+window.onload = async () => {
+  await loadHctCache();  // 先抓 HCT 快取
   if (TOKEN) {
     showMain();
     loadOrders();
@@ -357,8 +358,12 @@ function getOrderCategory(o) {
     if (daysSince >= 2) return 'unpicked';
   }
 
-  // Payment Link：Completed 只是付款確認
-  if (o.is_payment_link == 1 && o.status_word === 'Completed') return 'need_check';
+  // Payment Link：先查 HCT 快取，有結果就用真實狀態
+  if (o.is_payment_link == 1 && o.status_word === 'Completed') {
+    const cached = HCT_CACHE[o.tracking_code];
+    if (cached) return cached.status_cls === 'done' ? 'done_hct' : 'hct_' + cached.status_cls;
+    return 'need_check';
+  }
 
   return 'transit';
 }
@@ -376,6 +381,22 @@ function trackingUrl(o) {
   if (/7-?eleven/i.test(o.shop_type_name)) return 'https://eservice.7-11.com.tw/e-tracking/search.aspx';
   if (/family|全家/i.test(o.shop_type_name)) return 'https://fmec.famiport.com.tw/FP_Entrance/QueryBox';
   return null;
+}
+
+// ── HCT 狀態快取（從 GitHub 抓）──
+let HCT_CACHE = {};
+let HCT_UPDATED = '';
+
+async function loadHctCache() {
+  try {
+    const r = await fetch('https://hugina800.github.io/order-tracker/hct_status.json?t=' + Date.now());
+    if (!r.ok) return;
+    const d = await r.json();
+    HCT_CACHE  = d.tracking || {};
+    HCT_UPDATED = d.updated || '';
+    const el = document.getElementById('hctUpdated');
+    if (el) el.textContent = HCT_UPDATED ? `HCT 更新：${HCT_UPDATED}` : '';
+  } catch(e) {}
 }
 
 // ── 複製單號並開啟追蹤頁 ──
@@ -449,6 +470,17 @@ function renderOrders(orders) {
       badge = isConvStore
         ? `<span class="badge done">✅ 已完成取件</span>`
         : `<span class="badge done">✅ 已送達</span>`;
+    } else if (category === 'done_hct') {
+      // HCT 宅配，已確認送達（從 check_delivery.py 查到）
+      const cached = HCT_CACHE[o.tracking_code] || {};
+      const dateStr = cached.date ? `（${cached.date.slice(5)}）` : '';
+      if (cached.date) { arrivalStr = cached.date; const r = new Date(cached.date); r.setDate(r.getDate()+7); returnStr = fmtMD(r); returnClass = urgency(returnStr); }
+      badge = `<span class="badge done">✅ 已送達${dateStr}</span>`;
+    } else if (category.startsWith('hct_')) {
+      // HCT 有查到但未送達
+      const cached = HCT_CACHE[o.tracking_code] || {};
+      rowStyle = 'background:#fffbf0';
+      badge = `<span class="badge warn-badge">${cached.status || '⚠️ 待確認'}</span>`;
     } else if (category === 'unpicked') {
       rowStyle = 'background:#fff3e0';
       badge = `<span class="badge unpicked">🏪 到貨待取件</span>`;
