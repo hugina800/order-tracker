@@ -524,6 +524,17 @@ function renderOrders(orders) {
         retD.setDate(retD.getDate() + 7);
         returnStr = fmtMD(retD);
         returnClass = urgency(returnStr);
+      } else {
+        // 無 cache：以下單日 + 2 天估算到貨
+        const est = new Date((o.created || '').replace(' ', 'T'));
+        if (!isNaN(est.getTime())) {
+          est.setDate(est.getDate() + 2);
+          arrivalStr = est.toISOString().slice(0, 10) + '（估）';
+          const retD = new Date(est);
+          retD.setDate(retD.getDate() + 7);
+          returnStr = fmtMD(retD);
+          returnClass = urgency(returnStr);
+        }
       }
     } else if (category === 'need_check') {
       counts['待確認']++;
