@@ -17,8 +17,8 @@
       "date": null
     },
     "3360261612": {
-      "status": "3355512322",
-      "status_cls": "other",
+      "status": "🚚 配送中",
+      "status_cls": "transit",
       "date": null
     },
     "3355512322": {
@@ -62,13 +62,13 @@
       "date": null
     },
     "3360261601": {
-      "status": "3361109850",
-      "status_cls": "other",
+      "status": "🚚 配送中",
+      "status_cls": "transit",
       "date": null
     },
     "3361109850": {
-      "status": "3340759925",
-      "status_cls": "other",
+      "status": "🚚 配送中",
+      "status_cls": "transit",
       "date": null
     },
     "3340759925": {

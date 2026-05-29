@@ -148,6 +148,8 @@ def check_hct_batch(tracking_numbers: list) -> dict:
                         if re.match(r"^\d{10}$", line):
                             raw_date   = lines[i+1] if i+1 < len(lines) else ""
                             raw_status = lines[i+2] if i+2 < len(lines) else ""
+                            if re.match(r"^\d{10}$", raw_status):
+                                continue
                             label, cls = HCT_STATUS_MAP.get(raw_status, (raw_status or "查無資料", "other"))
                             dt_str = None
                             if re.match(r"\d{4}[-/]\d{2}[-/]\d{2}", raw_date):
