@@ -30,8 +30,8 @@ jobs:
 
       - name: Run HCT check
         env:
-          GM_USERNAME: ${{ secrets.GM_USERNAME }}
-          GM_PASSWORD: ${{ secrets.GM_PASSWORD }}
+          GM_USERNAME: ${{ secrets.GM_USER }}
+          GM_PASSWORD: ${{ secrets.GM_PASS }}
         run: xvfb-run --auto-servernum python3 hct_updater.py
 
       - name: Commit and push hct_status.json
