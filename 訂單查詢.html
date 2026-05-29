@@ -227,7 +227,7 @@ const RETURN_DAYS = 7;
 
 // ── 初始化 ──
 window.onload = async () => {
-  await loadHctCache();  // 先抓 HCT 快取
+  await Promise.all([loadHctCache(), loadConfirms()]);
   if (TOKEN) {
     showMain();
     loadOrders();
@@ -371,6 +371,56 @@ function getOrderCategory(o) {
 // ── 舊函式保持相容 ──
 function isRealArrival(o) { return getOrderCategory(o); }
 
+// ── 手動確認取貨（存到 GitHub）──
+const GH_TOKEN = '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';
+const GH_REPO  = 'hugina800/order-tracker';
+const GH_FILE  = 'manual_confirmations.json';
+let CONFIRMS = {}, CONFIRMS_SHA = '';
+
+async function loadConfirms() {
+  try {
+    const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
+      headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json' }
+    });
+    if (r.ok) {
+      const d = await r.json();
+      CONFIRMS_SHA = d.sha;
+      CONFIRMS = JSON.parse(atob(d.content.replace(/\n/g,'')));
+    }
+  } catch(e) {}
+}
+
+async function confirmDelivery(oId, receiverName) {
+  if (!confirm(`確認「${receiverName}」已完成取貨？`)) return;
+  const now = new Date().toLocaleString('zh-TW');
+  CONFIRMS[oId] = { confirmed_at: now, status: 'done' };
+  const body = {
+    message: `confirm: #${oId} ${receiverName}`,
+    content: btoa(unescape(encodeURIComponent(JSON.stringify(CONFIRMS, null, 2))))
+  };
+  if (CONFIRMS_SHA) body.sha = CONFIRMS_SHA;
+  const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`, {
+    method: 'PUT',
+    headers: { Authorization: `token ${GH_TOKEN}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  if (r.ok) {
+    const d = await r.json();
+    CONFIRMS_SHA = d.content.sha;
+    showToast(`✅ ${receiverName} 已確認取貨`);
+    // 更新畫面上那一行
+    const row = document.getElementById(`row-${oId}`);
+    if (row) {
+      row.style.opacity = '1';
+      row.style.background = '';
+      const td = row.querySelector('td:last-child');
+      if (td) td.innerHTML = '<span class="badge done">✅ 已完成取貨</span>';
+    }
+  } else {
+    alert('儲存失敗，請稍後再試');
+  }
+}
+
 // ── 取得追蹤連結 ──
 function trackingUrl(o) {
   const courier = o.courier_name || '';
@@ -459,6 +509,15 @@ function renderOrders(orders) {
       returnClass = urgency(returnStr);
     } else if (category === 'unpicked') {
       counts['未取貨']++;
+      if (o.created) {
+        const arrD = new Date(o.created.replace(' ', 'T'));
+        arrD.setDate(arrD.getDate() + 2);
+        arrivalStr = `${arrD.getMonth()+1}/${String(arrD.getDate()).padStart(2,'0')} 估`;
+        const retD = new Date(arrD);
+        retD.setDate(retD.getDate() + 7);
+        returnStr = fmtMD(retD);
+        returnClass = urgency(returnStr);
+      }
     } else if (category === 'need_check') {
       counts['待確認']++;
     }
@@ -485,14 +544,25 @@ function renderOrders(orders) {
       rowStyle = 'background:#fff3e0';
       badge = `<span class="badge unpicked">🏪 到貨待取件</span>`;
     } else if (category === 'need_check') {
-      rowStyle = 'background:#fffbf0';
-      badge = `<span class="badge warn-badge">⚠️ 待確認</span>`;
+      // 已手動確認？
+      if (CONFIRMS[o.o_id]) {
+        badge = `<span class="badge done">✅ 已完成取貨</span>`;
+      } else {
+        rowStyle = 'background:#fffbf0';
+        const rName = o.receiver_name || '—';
+        badge = `<span class="badge warn-badge">⚠️ 待確認</span>
+          <button onclick="confirmDelivery('${o.o_id}','${rName}')"
+            style="margin-left:6px;padding:3px 10px;background:#27ae60;color:white;
+                   border:none;border-radius:12px;font-size:11px;cursor:pointer;font-weight:600">
+            ✓ 確認取貨
+          </button>`;
+      }
     } else {
       rowStyle = 'opacity:0.55';
       badge = `<span class="badge transit">🚚 運送中</span>`;
     }
 
-    rows.push(`<tr style="${rowStyle}" data-status="${category}">
+    rows.push(`<tr id="row-${o.o_id}" style="${rowStyle}" data-status="${category}">
       <td class="td-order">#${o.o_id}</td>
       <td><span class="td-receiver">${o.receiver_name || '—'}</span><br>
           <span class="td-phone">${phone}</span></td>
