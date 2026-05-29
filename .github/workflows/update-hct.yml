@@ -1,4 +1,4 @@
-name: Update HCT Delivery Status
+name: Update Delivery Status
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        # 也可以在 GitHub 上手動觸發
 
 jobs:
-  check-hct:
+  check-delivery:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
       - name: Install Xvfb (for headless=False Chrome)
         run: sudo apt-get install -y xvfb
 
-      - name: Run HCT check
+      - name: Run delivery check (HCT + 7-11 + 全家)
         env:
           GM_USERNAME: ${{ secrets.GM_USER }}
           GM_PASSWORD: ${{ secrets.GM_PASS }}
@@ -39,5 +39,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add hct_status.json
-          git diff --staged --quiet || git commit -m "auto: update HCT status $(date '+%Y/%m/%d %H:%M')"
+          git diff --staged --quiet || git commit -m "auto: update delivery status $(date '+%Y/%m/%d %H:%M')"
           git push

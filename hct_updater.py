@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-自動查詢 HCT 宅配到貨狀態，更新 hct_status.json
+自動查詢 HCT / 7-11 / 全家 到貨狀態，更新 hct_status.json
 給 GitHub Actions 排程使用
 """
 
@@ -27,6 +27,27 @@ HCT_STATUS_MAP = {
     "退件":     ("↩️ 退件",   "returned"),
     "客不在":   ("⚠️ 客不在", "failed"),
     "無法投遞": ("⚠️ 無法投遞", "failed"),
+}
+
+SEVEN_STATUS_MAP = {
+    "已到達取件門市": ("🏪 到店待取", "arrived"),
+    "門市通知取件":   ("🏪 到店待取", "arrived"),
+    "已通知取件人":   ("🏪 到店待取", "arrived"),
+    "取件完成":       ("✅ 已取件",   "done"),
+    "取件人已取件":   ("✅ 已取件",   "done"),
+    "出貨中":         ("🚚 配送中",   "transit"),
+    "配送中":         ("🚚 配送中",   "transit"),
+    "逾期未取退回":   ("↩️ 退回",     "returned"),
+}
+
+FAMILY_STATUS_MAP = {
+    "到店通知":   ("🏪 到店待取", "arrived"),
+    "已到達門市": ("🏪 到店待取", "arrived"),
+    "已取件":     ("✅ 已取件",   "done"),
+    "取件完成":   ("✅ 已取件",   "done"),
+    "配送中":     ("🚚 配送中",   "transit"),
+    "出貨中":     ("🚚 配送中",   "transit"),
+    "逾期退回":   ("↩️ 退回",     "returned"),
 }
 
 
@@ -90,6 +111,24 @@ def read_captcha(session_cookie: str) -> str:
         headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
                  "Referer": "https://www.hct.com.tw/Search/SearchGoods_n.aspx"},
         timeout=10)
+    r.raise_for_status()
+    ocr = ddddocr.DdddOcr(show_ad=False)
+    return re.sub(r"[^0-9a-zA-Z]", "", ocr.classification(r.content))
+
+
+def ocr_captcha_url(url: str, cookies: dict, referer: str) -> str:
+    try:
+        import ddddocr
+    except ImportError:
+        import subprocess, sys
+        subprocess.run([sys.executable, "-m", "pip", "install", "ddddocr", "-q"],
+                       capture_output=True)
+        import ddddocr
+
+    r = requests.get(url, cookies=cookies,
+                     headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
+                              "Referer": referer},
+                     timeout=10)
     r.raise_for_status()
     ocr = ddddocr.DdddOcr(show_ad=False)
     return re.sub(r"[^0-9a-zA-Z]", "", ocr.classification(r.content))
@@ -177,6 +216,176 @@ def check_hct_batch(tracking_numbers: list) -> dict:
     return results
 
 
+def check_711_batch(tracking_numbers: list) -> dict:
+    if not tracking_numbers:
+        return {}
+
+    from playwright.sync_api import sync_playwright
+    import time as _time
+
+    results = {}
+    total = len(tracking_numbers)
+    done  = 0
+    url   = "https://eservice.7-11.com.tw/e-tracking/search.aspx"
+
+    print(f"\n🔍 查詢 7-11 物流（共 {total} 筆）...")
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=False)
+        ctx  = browser.new_context(viewport={"width": 1280, "height": 900})
+        page = ctx.new_page()
+
+        for no in tracking_numbers:
+            success = False
+            for attempt in range(4):
+                try:
+                    page.goto(url, timeout=20000)
+                    page.wait_for_timeout(1500)
+
+                    cookies = {c["name"]: c["value"] for c in ctx.cookies()}
+                    captcha = ocr_captcha_url(
+                        f"https://eservice.7-11.com.tw/e-tracking/ValidateImage.aspx?ts={int(_time.time())}",
+                        cookies, url)
+                    if not captcha or len(captcha) < 4:
+                        print(f"  [{no}] 驗證碼讀取失敗，重試({attempt+1}/4)")
+                        continue
+
+                    print(f"  [{no}] 驗證碼 {captcha}", end=" ... ")
+
+                    page.evaluate("""(d) => {
+                        document.getElementById('txtProductNum').value = d.no;
+                        document.getElementById('tbChkCode').value = d.cap;
+                        document.querySelector('input[name="aaa"]').click();
+                    }""", {"no": no, "cap": captcha})
+                    page.wait_for_timeout(3000)
+
+                    text  = page.evaluate("() => document.body.innerText")
+                    lines = [l.strip() for l in text.split('\n') if l.strip()]
+
+                    arrived_date = None
+                    status_label, status_cls = "查無資料", "other"
+                    for line in lines:
+                        m = re.search(r"(\d{4}[/-]\d{2}[/-]\d{2})", line)
+                        if m and not arrived_date:
+                            arrived_date = m.group(1).replace("/", "-")
+                        for kw, (lbl, cls) in SEVEN_STATUS_MAP.items():
+                            if kw in line:
+                                status_label, status_cls = lbl, cls
+                                if not arrived_date:
+                                    m2 = re.search(r"(\d{4}[/-]\d{2}[/-]\d{2})", line)
+                                    if m2:
+                                        arrived_date = m2.group(1).replace("/", "-")
+
+                    if "驗證碼" in text and status_label == "查無資料":
+                        print(f"驗證碼錯誤，重試({attempt+1}/4)")
+                        continue
+
+                    results[no] = {"status": status_label, "status_cls": status_cls, "date": arrived_date}
+                    done += 1
+                    print(f"✅ {status_label} {arrived_date or ''}")
+                    success = True
+                    break
+
+                except Exception as e:
+                    print(f"\n  [{no}] 錯誤：{e}，重試({attempt+1}/4)")
+
+            if not success:
+                results[no] = {"status": "查詢失敗", "status_cls": "error", "date": None}
+
+        browser.close()
+    return results
+
+
+def check_family_batch(tracking_numbers: list) -> dict:
+    if not tracking_numbers:
+        return {}
+
+    from playwright.sync_api import sync_playwright
+
+    results = {}
+    total = len(tracking_numbers)
+    done  = 0
+    url   = "https://fmec.famiport.com.tw/FP_Entrance/QueryBox"
+
+    print(f"\n🔍 查詢全家物流（共 {total} 筆）...")
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=False)
+        ctx  = browser.new_context(viewport={"width": 1280, "height": 900})
+        page = ctx.new_page()
+
+        for no in tracking_numbers:
+            success = False
+            for attempt in range(4):
+                try:
+                    page.goto(url, timeout=20000)
+                    page.wait_for_timeout(2000)
+
+                    frame = page.frame_locator("iframe").first
+
+                    captcha_img_url = page.evaluate("""() => {
+                        const iframes = document.querySelectorAll('iframe');
+                        for (const f of iframes) {
+                            try {
+                                const img = f.contentDocument?.querySelector('img[src*="captcha"], img[src*="Captcha"], img[src*="code"], img[src*="Code"], img[src*="verify"]');
+                                if (img) return img.src;
+                            } catch(e) {}
+                        }
+                        return null;
+                    }""")
+
+                    if not captcha_img_url:
+                        captcha_img_url = frame.locator("img").first.get_attribute("src") if frame else None
+
+                    captcha = ""
+                    if captcha_img_url:
+                        cookies = {c["name"]: c["value"] for c in ctx.cookies()}
+                        captcha = ocr_captcha_url(captcha_img_url, cookies, url)
+
+                    try:
+                        frame.locator("input[type='text']").first.fill(no)
+                        if captcha:
+                            frame.locator("input[placeholder*='驗證'], input[placeholder*='code']").fill(captcha)
+                        frame.locator("button[type='submit'], input[type='submit'], a.submit, button").first.click()
+                    except Exception:
+                        page.fill("input[name='orderno']", no)
+                        page.press("input[name='orderno']", "Enter")
+
+                    page.wait_for_timeout(3000)
+
+                    text  = page.evaluate("() => document.body.innerText")
+                    lines = [l.strip() for l in text.split('\n') if l.strip()]
+
+                    arrived_date = None
+                    status_label, status_cls = "查無資料", "other"
+                    for line in lines:
+                        m = re.search(r"(\d{4}[/-]\d{2}[/-]\d{2})", line)
+                        if m and not arrived_date:
+                            arrived_date = m.group(1).replace("/", "-")
+                        for kw, (lbl, cls) in FAMILY_STATUS_MAP.items():
+                            if kw in line:
+                                status_label, status_cls = lbl, cls
+                                if not arrived_date:
+                                    m2 = re.search(r"(\d{4}[/-]\d{2}[/-]\d{2})", line)
+                                    if m2:
+                                        arrived_date = m2.group(1).replace("/", "-")
+
+                    results[no] = {"status": status_label, "status_cls": status_cls, "date": arrived_date}
+                    done += 1
+                    print(f"  [{no}] ✅ {status_label} {arrived_date or ''}")
+                    success = True
+                    break
+
+                except Exception as e:
+                    print(f"\n  [{no}] 錯誤：{e}，重試({attempt+1}/4)")
+
+            if not success:
+                results[no] = {"status": "查詢失敗", "status_cls": "error", "date": None}
+
+        browser.close()
+    return results
+
+
 def main():
     username = os.environ.get("GM_USERNAME") or input("帳號：").strip()
     password = os.environ.get("GM_PASSWORD") or input("密碼：").strip()
@@ -196,14 +405,42 @@ def main():
         and int(o.get("is_payment_link", 0)) == 1
         and o.get("tracking_code")
     })
+    seven_numbers = list({
+        o["tracking_code"]
+        for o in orders
+        if classify(o) == "7-11"
+        and o.get("status_word") == "Delivering"
+        and o.get("tracking_code")
+    })
+    family_numbers = list({
+        o["tracking_code"]
+        for o in orders
+        if classify(o) == "全家"
+        and o.get("status_word") == "Delivering"
+        and o.get("tracking_code")
+    })
 
-    print(f"\n需查 HCT：{len(hct_numbers)} 筆")
+    print(f"\n需查 HCT：{len(hct_numbers)} 筆，7-11：{len(seven_numbers)} 筆，全家：{len(family_numbers)} 筆")
 
-    if not hct_numbers:
-        print("（無需查詢）")
+    all_results = {}
+    if hct_numbers:
+        all_results.update(check_hct_batch(hct_numbers))
+    else:
+        print("（無 HCT 信用卡宅配訂單）")
+
+    if seven_numbers:
+        all_results.update(check_711_batch(seven_numbers))
+    else:
+        print("（無 7-11 運送中訂單）")
+
+    if family_numbers:
+        all_results.update(check_family_batch(family_numbers))
+    else:
+        print("（無全家運送中訂單）")
+
+    if not all_results:
+        print("\n（無需查詢任何物流）")
         return
-
-    hct_results = check_hct_batch(hct_numbers)
 
     # 讀取現有 hct_status.json 合併
     out_path = Path(__file__).parent / "hct_status.json"
@@ -214,13 +451,13 @@ def main():
         except Exception:
             pass
 
-    existing.update(hct_results)
+    existing.update(all_results)
     output = {
         "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "tracking": existing
     }
     out_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n✅ 已更新 hct_status.json（{len(hct_results)} 筆）")
+    print(f"\n✅ 已更新 hct_status.json（{len(all_results)} 筆）")
 
 
 if __name__ == "__main__":
