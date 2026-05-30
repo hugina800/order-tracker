@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>訂單到貨狀態</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","微軟正黑體",sans-serif;background:#f5f6fa;color:#333;font-size:14px}
+
+/* Header */
+.hd{background:#1a1a2e;color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.hd-title{font-size:17px;font-weight:700}
+.hd-sub{font-size:12px;opacity:.55;margin-top:3px}
+.hd-updated{font-size:11px;background:rgba(255,255,255,.1);padding:5px 12px;border-radius:20px;white-space:nowrap}
+
+/* Cards */
+.cards{display:flex;gap:10px;padding:16px 16px 0;flex-wrap:wrap}
+.card{background:#fff;border-radius:10px;padding:14px 16px;flex:1;min-width:80px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:3px solid transparent;cursor:pointer;transition:.15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.12)}
+.card.active{box-shadow:0 0 0 2px #2563eb}
+.ca{border-color:#f59e0b}.ca .num{color:#f59e0b}
+.cu{border-color:#ef4444}.cu .num{color:#ef4444}
+.ct{border-color:#3b82f6}.ct .num{color:#3b82f6}
+.cd{border-color:#22c55e}.cd .num{color:#22c55e}
+.num{font-size:28px;font-weight:700}
+.lbl{font-size:11px;color:#999;margin-top:2px}
+
+/* Urgent banner */
+.urgent-banner{margin:14px 16px 0;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:10px 14px}
+.urgent-banner h3{font-size:12px;color:#dc2626;font-weight:700;margin-bottom:6px}
+.urgent-item{font-size:13px;color:#7f1d1d;padding:3px 0;display:flex;gap:8px;align-items:center}
+.urgent-item .badge{font-size:11px;background:#dc2626;color:#fff;padding:2px 8px;border-radius:10px}
+
+/* Search */
+.search-wrap{padding:14px 16px 0}
+.search-wrap input{width:100%;padding:9px 16px;border:1.5px solid #e2e8f0;border-radius:24px;font-size:13px;outline:none;transition:.15s}
+.search-wrap input:focus{border-color:#2563eb}
+
+/* Table area */
+.panel{margin:14px 16px 20px;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden}
+.panel-hd{padding:12px 16px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center}
+.panel-hd h2{font-size:13px;font-weight:600;color:#555}
+.count-tag{font-size:11px;color:#999}
+
+/* Table */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:700px}
+th{background:#f8f9fc;color:#888;font-size:11px;font-weight:700;padding:9px 12px;text-align:left;border-bottom:2px solid #f0f0f0;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid #f7f7f7;vertical-align:middle}
+tr:hover td{background:#f8faff}
+.empty{text-align:center;padding:40px 20px;color:#bbb;font-size:13px}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap}
+.s-arrived{background:#fef3c7;color:#92400e}
+.s-done{background:#dcfce7;color:#166534}
+.s-transit{background:#dbeafe;color:#1e40af}
+.s-failed{background:#fee2e2;color:#991b1b}
+.s-returned{background:#f3e8ff;color:#6b21a8}
+.s-other{background:#f3f4f6;color:#6b7280}
+.s-error{background:#fee2e2;color:#991b1b}
+
+/* Deadline colors */
+.dl{font-weight:700;font-size:13px}
+.dl-ok{color:#22c55e}
+.dl-warn{color:#f59e0b}
+.dl-urgent{color:#ef4444;animation:blink 1.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Responsive */
+@media(max-width:500px){
+  .num{font-size:22px}
+  .hd-title{font-size:15px}
+  td,th{padding:8px 8px}
+}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <div>
+    <div class="hd-title">📦 訂單到貨狀態</div>
+    <div class="hd-sub" id="period">載入中...</div>
+  </div>
+  <div class="hd-updated" id="updated">更新中...</div>
+</div>
+
+<div class="cards">
+  <div class="card ca" onclick="filterStatus('arrived')">
+    <div class="num" id="cnt-arrived">—</div>
+    <div class="lbl">🏪 到貨待取</div>
+  </div>
+  <div class="card cu" onclick="filterStatus('urgent')">
+    <div class="num" id="cnt-urgent">—</div>
+    <div class="lbl">⚠️ 快截止</div>
+  </div>
+  <div class="card ct" onclick="filterStatus('transit')">
+    <div class="num" id="cnt-transit">—</div>
+    <div class="lbl">🚚 運送中</div>
+  </div>
+  <div class="card cd" onclick="filterStatus('done')">
+    <div class="num" id="cnt-done">—</div>
+    <div class="lbl">✅ 已完成</div>
+  </div>
+</div>
+
+<div id="urgent-section"></div>
+
+<div class="search-wrap">
+  <input type="text" id="q" placeholder="🔍 搜尋買家姓名、商品、追蹤單號…" oninput="applyFilters()">
+</div>
+
+<div class="panel">
+  <div class="panel-hd">
+    <h2 id="panel-title">全部訂單</h2>
+    <span class="count-tag" id="panel-count"></span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>訂單號</th>
+          <th>買家</th>
+          <th>商品</th>
+          <th>配送</th>
+          <th>追蹤單號</th>
+          <th>下單日</th>
+          <th>到貨日</th>
+          <th>退貨截止</th>
+          <th>狀態</th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+let allOrders = [];
+let activeFilter = 'all';
+
+async function init() {
+  try {
+    const r = await fetch('orders_snapshot.json?t=' + Date.now());
+    if (!r.ok) throw new Error('無法載入資料');
+    const data = await r.json();
+    allOrders = data.orders || [];
+
+    document.getElementById('updated').textContent = '更新：' + data.updated;
+    document.getElementById('period').textContent =
+      '查詢期間：' + data.period_from + ' ～ ' + data.period_to;
+
+    updateCards();
+    renderUrgentBanner();
+    renderTable();
+  } catch(e) {
+    document.getElementById('tb').innerHTML =
+      '<tr><td colspan="9" class="empty">⚠️ 無法載入資料：' + e.message + '</td></tr>';
+    document.getElementById('updated').textContent = '載入失敗';
+  }
+}
+
+function daysDiff(dateStr) {
+  if (!dateStr) return null;
+  const d = new Date(dateStr);
+  const today = new Date(); today.setHours(0,0,0,0);
+  return Math.ceil((d - today) / 86400000);
+}
+
+function dlClass(dateStr) {
+  const d = daysDiff(dateStr);
+  if (d === null) return 'dl';
+  if (d <= 2) return 'dl dl-urgent';
+  if (d <= 5) return 'dl dl-warn';
+  return 'dl dl-ok';
+}
+
+function updateCards() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  let arrived = 0, urgent = 0, transit = 0, done = 0;
+  allOrders.forEach(o => {
+    if (['arrived','failed'].includes(o.status_cls)) arrived++;
+    if (o.return_deadline) {
+      const d = daysDiff(o.return_deadline);
+      if (d !== null && d <= 5) urgent++;
+    }
+    if (['transit','collected'].includes(o.status_cls)) transit++;
+    if (['done'].includes(o.status_cls)) done++;
+  });
+  document.getElementById('cnt-arrived').textContent = arrived;
+  document.getElementById('cnt-urgent').textContent  = urgent;
+  document.getElementById('cnt-transit').textContent = transit;
+  document.getElementById('cnt-done').textContent    = done;
+}
+
+function renderUrgentBanner() {
+  const urgent = allOrders.filter(o => {
+    if (!o.return_deadline) return false;
+    const d = daysDiff(o.return_deadline);
+    return d !== null && d <= 3;
+  }).sort((a,b) => a.return_deadline.localeCompare(b.return_deadline));
+
+  if (!urgent.length) return;
+
+  const items = urgent.map(o => {
+    const d = daysDiff(o.return_deadline);
+    const label = d <= 0 ? '已過期' : d === 1 ? '明天截止' : d + ' 天後截止';
+    return `<div class="urgent-item">
+      <span class="badge">${label}</span>
+      <b>${o.buyer}</b>・${o.product || '—'}・退貨截止 ${o.return_deadline}
+    </div>`;
+  }).join('');
+
+  document.getElementById('urgent-section').innerHTML = `
+    <div class="urgent-banner">
+      <h3>⚠️ 即將到期退貨截止（3 天內）</h3>
+      ${items}
+    </div>`;
+}
+
+function filterStatus(f) {
+  activeFilter = activeFilter === f ? 'all' : f;
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+  if (activeFilter !== 'all') {
+    const map = {arrived:0, urgent:1, transit:2, done:3};
+    document.querySelectorAll('.card')[map[activeFilter]]?.classList.add('active');
+  }
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = document.getElementById('q').value.toLowerCase();
+  let filtered = allOrders;
+
+  if (activeFilter === 'arrived') {
+    filtered = filtered.filter(o => ['arrived','failed'].includes(o.status_cls));
+  } else if (activeFilter === 'urgent') {
+    filtered = filtered.filter(o => {
+      if (!o.return_deadline) return false;
+      const d = daysDiff(o.return_deadline);
+      return d !== null && d <= 5;
+    });
+  } else if (activeFilter === 'transit') {
+    filtered = filtered.filter(o => ['transit','collected'].includes(o.status_cls));
+  } else if (activeFilter === 'done') {
+    filtered = filtered.filter(o => o.status_cls === 'done');
+  }
+
+  if (q) {
+    filtered = filtered.filter(o =>
+      (o.buyer||'').toLowerCase().includes(q) ||
+      (o.product||'').toLowerCase().includes(q) ||
+      (o.tracking||'').toLowerCase().includes(q) ||
+      (o.id||'').toLowerCase().includes(q)
+    );
+  }
+
+  renderTable(filtered);
+}
+
+function renderTable(orders) {
+  orders = orders || allOrders;
+  const tb = document.getElementById('tb');
+  document.getElementById('panel-count').textContent = orders.length + ' 筆';
+
+  if (!orders.length) {
+    tb.innerHTML = '<tr><td colspan="9" class="empty">查無符合的訂單</td></tr>';
+    return;
+  }
+
+  tb.innerHTML = orders.map(o => {
+    const dlStr = o.return_deadline
+      ? `<span class="${dlClass(o.return_deadline)}">${o.return_deadline}</span>`
+      : '<span style="color:#ccc">—</span>';
+    const arrivedStr = o.arrived_date || '<span style="color:#ccc">—</span>';
+    const shopStr = o.shop ? `<br><small style="color:#bbb">${o.shop}</small>` : '';
+    const sCls = 's-' + (o.status_cls || 'other');
+
+    return `<tr>
+      <td style="font-family:monospace;font-size:12px;color:#aaa">#${o.id}</td>
+      <td><b>${o.buyer}</b></td>
+      <td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${o.product||''}">${o.product||'—'}</td>
+      <td>${o.type}${shopStr}</td>
+      <td style="font-family:monospace;font-size:12px">${o.tracking||'—'}</td>
+      <td style="color:#aaa;font-size:12px">${o.order_date||'—'}</td>
+      <td style="font-size:12px">${arrivedStr}</td>
+      <td>${dlStr}</td>
+      <td><span class="badge ${sCls}">${o.status}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+init();
+</script>
+</body>
+</html>
