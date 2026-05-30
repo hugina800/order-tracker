@@ -14,8 +14,10 @@ from pathlib import Path
 
 warnings.filterwarnings("ignore")
 
-API_BASE = "https://gateway.globemerce.com"
-PLATFORM = "FIV5S Web"
+API_BASE    = "https://gateway.globemerce.com"
+PLATFORM    = "FIV5S Web"
+RETURN_DAYS = 7
+RELEVANT    = {"7-11", "全家", "超商", "宅配(HCT)", "郵局"}
 
 HCT_STATUS_MAP = {
     "順利送達": ("✅ 已送達", "done"),
@@ -87,13 +89,122 @@ def gm_get_orders(token: str) -> list:
 
 def classify(o: dict):
     st = o.get("shop_type_name", "")
+    sn = o.get("shop_name", "")
     c  = o.get("courier_name", "")
-    if "7-Eleven" in st or "7eleven" in st.lower(): return "7-11"
-    if "Family Mart" in st or "全家" in st:         return "全家"
-    if st:                                           return "超商"
-    if "HCT" in c or "新竹" in c:                   return "宅配(HCT)"
-    if "Post" in c or "郵局" in c:                  return "郵局"
-    return "其他"
+    if "7-Eleven" in st or "7eleven" in st.lower(): return "7-11", sn
+    if "Family Mart" in st or "全家" in st:         return "全家", sn
+    if st:                                           return "超商", sn
+    if "HCT" in c or "新竹" in c:                   return "宅配(HCT)", ""
+    if "Post" in c or "郵局" in c:                  return "郵局", ""
+    if "QSY" in c or "Self Collect" in c:           return "超商", sn
+    return "其他", ""
+
+
+def is_hct_payment_link(o: dict) -> bool:
+    dtype, _ = classify(o)
+    return dtype == "宅配(HCT)" and int(o.get("is_payment_link", 0)) == 1
+
+
+def parse_dt(s: str):
+    if not s or s.startswith("0000"):
+        return None
+    for fmt in ("%Y-%m-%d %H:%M:%S.%f", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d",
+                "%Y/%m/%d %H:%M", "%Y/%m/%d"):
+        try:
+            return datetime.strptime(s[:len(fmt)], fmt)
+        except ValueError:
+            pass
+    try:
+        return datetime.strptime(s[:10], "%Y-%m-%d")
+    except ValueError:
+        return None
+
+
+def build_snapshot(orders: list, hct_results: dict) -> dict:
+    date_to   = datetime.now().strftime("%Y-%m-%d")
+    date_from = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+
+    def products(o):
+        return ", ".join(
+            d.get("product_name", "") for d in (o.get("order_detail") or [])[:3]
+            if d.get("product_name", "") and not d.get("product_name", "").startswith("TW-DISCOUNT")
+        )
+
+    def fmt(d):
+        if d is None:
+            return None
+        if isinstance(d, datetime):
+            return d.strftime("%Y-%m-%d")
+        s = str(d)[:10]
+        return s if s and not s.startswith("0000") else None
+
+    snapshot_orders = []
+    for o in orders:
+        dtype, shop_name = classify(o)
+        if dtype not in RELEVANT:
+            continue
+
+        tracking   = o.get("tracking_code") or ""
+        arrived    = None
+        deadline   = None
+        status     = "🚚 運送中"
+        status_cls = "transit"
+
+        if is_hct_payment_link(o):
+            info       = hct_results.get(tracking, {})
+            status     = info.get("status", "—")
+            status_cls = info.get("status_cls", "other")
+            arrived    = fmt(info.get("date"))
+        elif (o.get("courier_type") == "cod"
+              and o.get("status_word") == "Completed"
+              and o.get("donedate") and not o["donedate"].startswith("0000")):
+            dt         = parse_dt(o["donedate"])
+            status     = "✅ 已取件"
+            status_cls = "done"
+            arrived    = fmt(dt)
+        elif tracking and tracking in hct_results:
+            info       = hct_results[tracking]
+            status     = info.get("status", "🚚 運送中")
+            status_cls = info.get("status_cls", "transit")
+            arrived    = fmt(info.get("date"))
+
+        if arrived:
+            try:
+                deadline = (datetime.strptime(arrived, "%Y-%m-%d") + timedelta(days=RETURN_DAYS)).strftime("%Y-%m-%d")
+            except ValueError:
+                pass
+
+        entry = {
+            "id":         str(o.get("o_id", "")),
+            "type":       dtype,
+            "shop":       shop_name,
+            "tracking":   tracking,
+            "buyer":      o.get("receiver_name", "—"),
+            "product":    products(o),
+            "order_date": (o.get("created") or "")[:10],
+            "status":     status,
+            "status_cls": status_cls,
+        }
+        if arrived:
+            entry["arrived_date"]    = arrived
+        if deadline:
+            entry["return_deadline"] = deadline
+
+        snapshot_orders.append(entry)
+
+    priority = {"arrived": 0, "failed": 1, "transit": 2,
+                "collected": 3, "done": 4, "returned": 5, "other": 6, "error": 7}
+    snapshot_orders.sort(key=lambda x: (
+        priority.get(x["status_cls"], 99),
+        x.get("return_deadline", "9999")
+    ))
+
+    return {
+        "updated":     datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "period_from": date_from,
+        "period_to":   date_to,
+        "orders":      snapshot_orders
+    }
 
 
 def read_captcha(session_cookie: str) -> str:
@@ -401,21 +512,21 @@ def main():
     hct_numbers = list({
         o["tracking_code"]
         for o in orders
-        if classify(o) == "宅配(HCT)"
+        if classify(o)[0] == "宅配(HCT)"
         and int(o.get("is_payment_link", 0)) == 1
         and o.get("tracking_code")
     })
     seven_numbers = list({
         o["tracking_code"]
         for o in orders
-        if classify(o) == "7-11"
+        if classify(o)[0] == "7-11"
         and o.get("status_word") == "Delivering"
         and o.get("tracking_code")
     })
     family_numbers = list({
         o["tracking_code"]
         for o in orders
-        if classify(o) == "全家"
+        if classify(o)[0] == "全家"
         and o.get("status_word") == "Delivering"
         and o.get("tracking_code")
     })
@@ -438,26 +549,37 @@ def main():
     else:
         print("（無全家運送中訂單）")
 
-    if not all_results:
+    repo_dir = Path(__file__).parent
+
+    # 更新 hct_status.json
+    if all_results:
+        out_path = repo_dir / "hct_status.json"
+        existing = {}
+        if out_path.exists():
+            try:
+                existing = json.loads(out_path.read_text(encoding="utf-8")).get("tracking", {})
+            except Exception:
+                pass
+        existing.update(all_results)
+        output = {
+            "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            "tracking": {
+                no: {"status": info.get("status","—"),
+                     "status_cls": info.get("status_cls","other"),
+                     "date": str(info.get("date","") or "")[:10] or None}
+                for no, info in existing.items()
+            }
+        }
+        out_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\n✅ 已更新 hct_status.json（{len(all_results)} 筆新結果）")
+    else:
         print("\n（無需查詢任何物流）")
-        return
 
-    # 讀取現有 hct_status.json 合併
-    out_path = Path(__file__).parent / "hct_status.json"
-    existing = {}
-    if out_path.exists():
-        try:
-            existing = json.loads(out_path.read_text(encoding="utf-8")).get("tracking", {})
-        except Exception:
-            pass
-
-    existing.update(all_results)
-    output = {
-        "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "tracking": existing
-    }
-    out_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n✅ 已更新 hct_status.json（{len(all_results)} 筆）")
+    # 產生助理看板 snapshot
+    snapshot = build_snapshot(orders, all_results)
+    snap_path = repo_dir / "orders_snapshot.json"
+    snap_path.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"✅ 已產生 orders_snapshot.json（{len(snapshot['orders'])} 筆訂單）")
 
 
 if __name__ == "__main__":
