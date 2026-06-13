@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12 12:48",
+  "updated": "2026-06-13 10:22",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -367,9 +367,9 @@
       "date": null
     },
     "3374614084": {
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "date": "2026/06/11"
+      "status": "查無資料",
+      "status_cls": "other",
+      "date": null
     },
     "C50558266000001": {
       "status": "查詢失敗",
@@ -417,9 +417,9 @@
       "date": null
     },
     "3377887704": {
-      "status": "📦 已集貨",
-      "status_cls": "collected",
-      "date": "2026/06/12"
+      "status": "轉運中",
+      "status_cls": "other",
+      "date": "2026/06/13"
     }
   }
 }
