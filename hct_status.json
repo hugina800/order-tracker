@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15 18:25",
+  "updated": "2026-06-16 18:34",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -122,9 +122,9 @@
       "date": "2026/05/20"
     },
     "3348933641": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/05/25"
     },
     "3353538215": {
       "status": "✅ 已送達",
@@ -217,9 +217,9 @@
       "date": "2026/06/05"
     },
     "3363089214": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/02"
     },
     "C20472206000001": {
       "status": "查詢失敗",
@@ -262,9 +262,9 @@
       "date": "2026/06/03"
     },
     "3363855353": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/03"
     },
     "C23772736000001": {
       "status": "查詢失敗",
@@ -302,9 +302,9 @@
       "date": "2026/06/06"
     },
     "3369211834": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/06"
     },
     "C34238156000001": {
       "status": "查詢失敗",
@@ -337,9 +337,9 @@
       "date": null
     },
     "3372277731": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/10"
     },
     "3372277742": {
       "status": "✅ 已送達",
@@ -387,19 +387,19 @@
       "date": "2026/06/12"
     },
     "3375489504": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/12"
     },
     "3375489644": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/12"
     },
     "3375489515": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/12"
     },
     "C54190896000001": {
       "status": "查詢失敗",
@@ -417,34 +417,34 @@
       "date": null
     },
     "3377887704": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/06/15"
     },
     "3379932264": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/16"
     },
     "3378546684": {
-      "status": "📦 已集貨",
-      "status_cls": "collected",
-      "date": "2026/06/15"
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/06/16"
     },
     "3379505673": {
-      "status": "📦 已集貨",
-      "status_cls": "collected",
-      "date": "2026/06/15"
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/06/16"
     },
     "3378546603": {
-      "status": "轉運中",
+      "status": "送達超商",
       "status_cls": "other",
       "date": "2026/06/16"
     },
     "3378546566": {
-      "status": "📦 已集貨",
-      "status_cls": "collected",
-      "date": "2026/06/15"
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/16"
     },
     "C64752266000001": {
       "status": "查詢失敗",
@@ -497,6 +497,36 @@
       "date": null
     },
     "16342047817": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "3381443424": {
+      "status": "📦 已集貨",
+      "status_cls": "collected",
+      "date": "2026/06/16"
+    },
+    "3380594630": {
+      "status": "轉運中",
+      "status_cls": "other",
+      "date": "2026/06/17"
+    },
+    "3381443380": {
+      "status": "轉運中",
+      "status_cls": "other",
+      "date": "2026/06/17"
+    },
+    "C70006216000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "C70006206000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "16342167432": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
