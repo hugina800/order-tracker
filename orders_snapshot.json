@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-19 14:04",
-  "period_from": "2026-05-20",
-  "period_to": "2026-06-19",
+  "updated": "2026-06-20 10:48",
+  "period_from": "2026-05-21",
+  "period_to": "2026-06-20",
   "orders": [
     {
       "id": "2403739",
@@ -938,6 +938,30 @@
       "arrived_date": "2026/06/18"
     },
     {
+      "id": "2399096",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3378546684",
+      "buyer": "李宗澤",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
+      "order_date": "2026-06-12",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/06/18"
+    },
+    {
+      "id": "2398215",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3377887704",
+      "buyer": "陳冠驊",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-12",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/06/17"
+    },
+    {
       "id": "2397422",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1070,6 +1094,18 @@
       "arrived_date": "2026/06/06"
     },
     {
+      "id": "2385525",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3369211871",
+      "buyer": "宋玟錡",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-05",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/06/06"
+    },
+    {
       "id": "2381466",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1094,6 +1130,18 @@
       "arrived_date": "2026/06/04"
     },
     {
+      "id": "2378009",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3363855316",
+      "buyer": "鍾治宇",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-01",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/06/03"
+    },
+    {
       "id": "2377827",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1104,6 +1152,18 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/06/03"
+    },
+    {
+      "id": "2377534",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3363089214",
+      "buyer": "李怡臻",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-01",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/06/02"
     },
     {
       "id": "2376508",
@@ -1128,6 +1188,18 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/06/01"
+    },
+    {
+      "id": "2373175",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3360261601",
+      "buyer": "李宗翰",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-05-28",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/05/31"
     },
     {
       "id": "2373170",
@@ -1238,16 +1310,15 @@
       "arrived_date": "2026/05/22"
     },
     {
-      "id": "2361380",
+      "id": "2411228",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3350470701",
-      "buyer": "黃妍虹",
+      "tracking": "",
+      "buyer": "林昱江",
       "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-05-20",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/05/22"
+      "order_date": "2026-06-20",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2410239",
@@ -1306,28 +1377,6 @@
       "status_cls": "other"
     },
     {
-      "id": "2399096",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3378546684",
-      "buyer": "李宗澤",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-06-12",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2398215",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3377887704",
-      "buyer": "陳冠驊",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-12",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
       "id": "2389863",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1350,17 +1399,6 @@
       "status_cls": "other"
     },
     {
-      "id": "2385525",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3369211871",
-      "buyer": "宋玟錡",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-05",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
       "id": "2383290",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1368,28 +1406,6 @@
       "buyer": "呂昱儀",
       "product": "TW-iBLINGs\\V4",
       "order_date": "2026-06-03",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2378009",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3363855316",
-      "buyer": "鍾治宇",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-01",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2377534",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3363089214",
-      "buyer": "李怡臻",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-01",
       "status": "—",
       "status_cls": "other"
     },
@@ -1402,17 +1418,6 @@
       "product": "TW- S/I\\V3",
       "order_date": "2026-05-29",
       "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2373175",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3360261601",
-      "buyer": "李宗翰",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-05-28",
-      "status": "查無資料",
       "status_cls": "other"
     },
     {
@@ -1478,17 +1483,6 @@
       "buyer": "陳裕旺",
       "product": "TW-iBLINGs\\V4, TW S-GLOW植萃外泌體養髮液(PWP)_MAY/26",
       "order_date": "2026-05-21",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2359871",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3349633151",
-      "buyer": "黃信楷",
-      "product": "TW- S/I\\V3",
-      "order_date": "2026-05-20",
       "status": "—",
       "status_cls": "other"
     },
