@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-23 12:22",
-  "period_from": "2026-05-24",
-  "period_to": "2026-06-23",
+  "updated": "2026-06-24 11:36",
+  "period_from": "2026-05-25",
+  "period_to": "2026-06-24",
   "orders": [
     {
       "id": "2403739",
@@ -963,6 +963,44 @@
       "return_deadline": "2026-06-30"
     },
     {
+      "id": "2407219",
+      "type": "7-11",
+      "shop": "興村",
+      "tracking": "C77480276000001",
+      "buyer": "蘇于軒",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-18",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-06-24",
+      "return_deadline": "2026-07-01"
+    },
+    {
+      "id": "2407213",
+      "type": "7-11",
+      "shop": "文衡",
+      "tracking": "C77480216000001",
+      "buyer": "宋瓔娟",
+      "product": "TW- S/I\\V3",
+      "order_date": "2026-06-18",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-06-24",
+      "return_deadline": "2026-07-01"
+    },
+    {
+      "id": "2411228",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3385588824",
+      "buyer": "林昱江",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-20",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/06/23"
+    },
+    {
       "id": "2408966",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1251,18 +1289,6 @@
       "arrived_date": "2026/06/06"
     },
     {
-      "id": "2381466",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3366559873",
-      "buyer": "張巧卉",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW S-GLOW植萃外泌體養髮液(PWP)_MAY/26",
-      "order_date": "2026-06-03",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/04"
-    },
-    {
       "id": "2381462",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1407,18 +1433,6 @@
       "arrived_date": "2026/05/28"
     },
     {
-      "id": "2366491",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3353538215",
-      "buyer": "宋尹袗",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-05-24",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/05/27"
-    },
-    {
       "id": "2412870",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1465,18 +1479,6 @@
       "arrived_date": "2026/06/23"
     },
     {
-      "id": "2411228",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3385588824",
-      "buyer": "林昱江",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-20",
-      "status": "送達超商",
-      "status_cls": "other",
-      "arrived_date": "2026/06/23"
-    },
-    {
       "id": "2410239",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1495,9 +1497,9 @@
       "buyer": "柯怡均",
       "product": "TW- S/I\\V3",
       "order_date": "2026-06-18",
-      "status": "轉運中",
+      "status": "送達超商",
       "status_cls": "other",
-      "arrived_date": "2026/06/23"
+      "arrived_date": "2026/06/24"
     },
     {
       "id": "2403773",
@@ -1588,28 +1590,6 @@
       "status_cls": "error"
     },
     {
-      "id": "2407219",
-      "type": "7-11",
-      "shop": "興村",
-      "tracking": "C77480276000001",
-      "buyer": "蘇于軒",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-18",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2407213",
-      "type": "7-11",
-      "shop": "文衡",
-      "tracking": "C77480216000001",
-      "buyer": "宋瓔娟",
-      "product": "TW- S/I\\V3",
-      "order_date": "2026-06-18",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
       "id": "2407028",
       "type": "7-11",
       "shop": "星潭",
@@ -1650,6 +1630,17 @@
       "buyer": "黃泓鈞",
       "product": "TW-iBLINGs\\V4",
       "order_date": "2026-06-15",
+      "status": "查詢失敗",
+      "status_cls": "error"
+    },
+    {
+      "id": "2381466",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3366559873",
+      "buyer": "張巧卉",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW S-GLOW植萃外泌體養髮液(PWP)_MAY/26",
+      "order_date": "2026-06-03",
       "status": "查詢失敗",
       "status_cls": "error"
     }
