@@ -1,8 +1,19 @@
 {
-  "updated": "2026-06-26 11:37",
-  "period_from": "2026-05-27",
-  "period_to": "2026-06-26",
+  "updated": "2026-06-27 09:38",
+  "period_from": "2026-05-28",
+  "period_to": "2026-06-27",
   "orders": [
+    {
+      "id": "2422127",
+      "type": "7-11",
+      "shop": "潮昇門市",
+      "tracking": "",
+      "buyer": "李沛璇",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-27",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
     {
       "id": "2419440",
       "type": "7-11",
@@ -90,71 +101,6 @@
       "order_date": "2026-05-28",
       "status": "🚚 運送中",
       "status_cls": "transit"
-    },
-    {
-      "id": "2370724",
-      "type": "7-11",
-      "shop": "情友",
-      "tracking": "C05375586000001",
-      "buyer": "朝玉華",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-05-27",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-05-29",
-      "return_deadline": "2026-06-05"
-    },
-    {
-      "id": "2370717",
-      "type": "7-11",
-      "shop": "松華",
-      "tracking": "C05375646000001",
-      "buyer": "楊姍頴",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-05-27",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-05-29",
-      "return_deadline": "2026-06-05"
-    },
-    {
-      "id": "2370723",
-      "type": "7-11",
-      "shop": "佳里",
-      "tracking": "C05375606000001",
-      "buyer": "黃岑",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-05-27",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-05-31",
-      "return_deadline": "2026-06-07"
-    },
-    {
-      "id": "2370719",
-      "type": "全家",
-      "shop": "全家安定保安店",
-      "tracking": "16340506150",
-      "buyer": "林介元",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-05-27",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-05-31",
-      "return_deadline": "2026-06-07"
-    },
-    {
-      "id": "2370718",
-      "type": "7-11",
-      "shop": "三興",
-      "tracking": "C05375636000001",
-      "buyer": "許玉平",
-      "product": "TW- S/I\\V3",
-      "order_date": "2026-05-27",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-05-31",
-      "return_deadline": "2026-06-07"
     },
     {
       "id": "2371811",
@@ -1303,16 +1249,26 @@
       "arrived_date": "2026/06/02"
     },
     {
-      "id": "2370776",
+      "id": "2422519",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3358774193",
-      "buyer": "章元毓",
-      "product": "TW-SGLOW內外養護體驗特惠組_FEB/26",
-      "order_date": "2026-05-27",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/05/29"
+      "tracking": "",
+      "buyer": "陳鈺麒",
+      "product": "TW-ISODUCE PLUS 曖舒優煥活粉",
+      "order_date": "2026-06-27",
+      "status": "—",
+      "status_cls": "other"
+    },
+    {
+      "id": "2421820",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "",
+      "buyer": "陳偲維",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-26",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2421802",
