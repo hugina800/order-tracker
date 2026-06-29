@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28 10:19",
+  "updated": "2026-06-29 05:29",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -652,6 +652,21 @@
       "date": null
     },
     "16342936195": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "3394028072": {
+      "status": "網站地圖｜隱私權政策｜個資政策聲明｜與我們聯絡",
+      "status_cls": "other",
+      "date": null
+    },
+    "D10666006000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "D10666836000001": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
