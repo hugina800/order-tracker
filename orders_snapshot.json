@@ -1,19 +1,51 @@
 {
-  "updated": "2026-07-02 04:58",
-  "period_from": "2026-06-02",
-  "period_to": "2026-07-02",
+  "updated": "2026-07-03 04:43",
+  "period_from": "2026-06-03",
+  "period_to": "2026-07-03",
   "orders": [
     {
-      "id": "2428057",
+      "id": "2432137",
+      "type": "全家",
+      "shop": "全家台中金東門店",
+      "tracking": "",
+      "buyer": "Rika",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-07-03",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
+    {
+      "id": "2432126",
+      "type": "7-11",
+      "shop": "福溢",
+      "tracking": "",
+      "buyer": "林錫忠",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-03",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
+    {
+      "id": "2432123",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3397706771",
-      "buyer": "鍾孟勳",
+      "tracking": "",
+      "buyer": "盧茹茹",
+      "product": "TW- S/I\\V3",
+      "order_date": "2026-07-03",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
+    {
+      "id": "2432122",
+      "type": "7-11",
+      "shop": "仁大",
+      "tracking": "",
+      "buyer": "馮順興",
       "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-30",
-      "status": "🚚 配送中",
-      "status_cls": "transit",
-      "arrived_date": "2026/07/02"
+      "order_date": "2026-07-03",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
     },
     {
       "id": "2403739",
@@ -80,32 +112,6 @@
       "order_date": "2026-06-08",
       "status": "🚚 運送中",
       "status_cls": "transit"
-    },
-    {
-      "id": "2379853",
-      "type": "7-11",
-      "shop": "柯達",
-      "tracking": "C24152446000001",
-      "buyer": "陳振文",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-02",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-05",
-      "return_deadline": "2026-06-12"
-    },
-    {
-      "id": "2379446",
-      "type": "7-11",
-      "shop": "萬文",
-      "tracking": "C23772736000001",
-      "buyer": "賴士隆",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-06-02",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-05",
-      "return_deadline": "2026-06-12"
     },
     {
       "id": "2385257",
@@ -693,6 +699,18 @@
       "return_deadline": "2026-07-06"
     },
     {
+      "id": "2431475",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3400308063",
+      "buyer": "龔敬智",
+      "product": "TW BGS 百優葡萄籽錠劑\\V1, TW S-GLOW植萃外泌體養髮液\\V1, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-02",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/07/03"
+    },
+    {
       "id": "2423251",
       "type": "宅配(HCT)",
       "shop": "",
@@ -715,6 +733,18 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/06/30"
+    },
+    {
+      "id": "2422519",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3394028234",
+      "buyer": "陳鈺麒",
+      "product": "TW-ISODUCE PLUS 曖舒優煥活粉",
+      "order_date": "2026-06-27",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/07/02"
     },
     {
       "id": "2421820",
@@ -921,18 +951,6 @@
       "arrived_date": "2026/06/16"
     },
     {
-      "id": "2400437",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3378546603",
-      "buyer": "李榆蕎",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-13",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/18"
-    },
-    {
       "id": "2399096",
       "type": "宅配(HCT)",
       "shop": "",
@@ -1125,16 +1143,16 @@
       "arrived_date": "2026/06/04"
     },
     {
-      "id": "2422519",
+      "id": "2428057",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3394028234",
-      "buyer": "陳鈺麒",
-      "product": "TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-06-27",
+      "tracking": "3397706771",
+      "buyer": "鍾孟勳",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-30",
       "status": "送達超商",
       "status_cls": "other",
-      "arrived_date": "2026/06/30"
+      "arrived_date": "2026/07/02"
     },
     {
       "id": "2421022",
@@ -1249,6 +1267,17 @@
       "status_cls": "other"
     },
     {
+      "id": "2431863",
+      "type": "7-11",
+      "shop": "招英",
+      "tracking": "D25548746000001",
+      "buyer": "邱敬軒",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-07-02",
+      "status": "查詢失敗",
+      "status_cls": "error"
+    },
+    {
       "id": "2429274",
       "type": "全家",
       "shop": "全家花蓮國蓮店",
@@ -1300,6 +1329,17 @@
       "buyer": "林佳瑩",
       "product": "TW-iBLINGs\\V4",
       "order_date": "2026-06-25",
+      "status": "查詢失敗",
+      "status_cls": "error"
+    },
+    {
+      "id": "2400437",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3378546603",
+      "buyer": "李榆蕎",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-13",
       "status": "查詢失敗",
       "status_cls": "error"
     }
