@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10 04:51",
+  "updated": "2026-07-11 04:15",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -817,6 +817,21 @@
       "date": null
     },
     "D46036346000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "D48955876000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "D48955866000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "D48955846000001": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
