@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-11 04:15",
-  "period_from": "2026-06-11",
-  "period_to": "2026-07-11",
+  "updated": "2026-07-12 04:27",
+  "period_from": "2026-06-12",
+  "period_to": "2026-07-12",
   "orders": [
     {
       "id": "2436450",
@@ -57,45 +57,6 @@
       "order_date": "2026-06-13",
       "status": "🚚 運送中",
       "status_cls": "transit"
-    },
-    {
-      "id": "2395922",
-      "type": "7-11",
-      "shop": "大果",
-      "tracking": "C54190816000001",
-      "buyer": "浩伊",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-11",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-15",
-      "return_deadline": "2026-06-22"
-    },
-    {
-      "id": "2395827",
-      "type": "7-11",
-      "shop": "利吉門市",
-      "tracking": "C54190896000001",
-      "buyer": "洪瑞明",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-11",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-15",
-      "return_deadline": "2026-06-22"
-    },
-    {
-      "id": "2395820",
-      "type": "7-11",
-      "shop": "仁大",
-      "tracking": "C54190906000001",
-      "buyer": "馮順興",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-11",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-15",
-      "return_deadline": "2026-06-22"
     },
     {
       "id": "2401393",
@@ -1006,16 +967,15 @@
       "arrived_date": "2026/06/17"
     },
     {
-      "id": "2397422",
+      "id": "2447748",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3379932264",
-      "buyer": "呂昱儀",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-11",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/16"
+      "tracking": "",
+      "buyer": "鄭弈暉",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-11",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2444901",
