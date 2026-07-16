@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15 04:00",
+  "updated": "2026-07-16 04:02",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -502,9 +502,9 @@
       "date": null
     },
     "3381443424": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/18"
     },
     "3380594630": {
       "status": "✅ 已送達",
@@ -572,9 +572,9 @@
       "date": null
     },
     "3384531835": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/22"
     },
     "3383890484": {
       "status": "✅ 已送達",
@@ -622,9 +622,9 @@
       "date": "2026/06/23"
     },
     "3385588824": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/23"
     },
     "3385589045": {
       "status": "✅ 已送達",
@@ -657,9 +657,9 @@
       "date": null
     },
     "3394028072": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/01"
     },
     "D10666006000001": {
       "status": "查詢失敗",
@@ -672,9 +672,9 @@
       "date": null
     },
     "3394028234": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/02"
     },
     "3394028352": {
       "status": "✅ 已送達",
@@ -687,14 +687,14 @@
       "date": "2026/06/30"
     },
     "3394028293": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/30"
     },
     "3394028481": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/04"
     },
     "3394028562": {
       "status": "✅ 已送達",
@@ -702,9 +702,9 @@
       "date": "2026/07/03"
     },
     "3394028131": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/06/30"
     },
     "3394028551": {
       "status": "✅ 已送達",
@@ -867,6 +867,21 @@
       "date": null
     },
     "3412597344": {
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/15"
+    },
+    "3413524763": {
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/07/16"
+    },
+    "D64525726000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "D67136596000001": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
