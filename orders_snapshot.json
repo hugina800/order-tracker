@@ -1,19 +1,8 @@
 {
-  "updated": "2026-07-16 04:02",
-  "period_from": "2026-06-16",
-  "period_to": "2026-07-16",
+  "updated": "2026-07-17 04:01",
+  "period_from": "2026-06-17",
+  "period_to": "2026-07-17",
   "orders": [
-    {
-      "id": "2455548",
-      "type": "全家",
-      "shop": "全家高雄果豐店",
-      "tracking": "",
-      "buyer": "段志璊",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26, TW-FEMOIRE SERUM 淡紋水光精華(F)_JUL/26",
-      "order_date": "2026-07-16",
-      "status": "🚚 運送中",
-      "status_cls": "transit"
-    },
     {
       "id": "2436450",
       "type": "全家",
@@ -37,28 +26,15 @@
       "status_cls": "transit"
     },
     {
-      "id": "2403739",
-      "type": "7-11",
-      "shop": "文衡",
-      "tracking": "",
-      "buyer": "宋瓔娟",
-      "product": "TW- S/I\\V3",
-      "order_date": "2026-06-16",
+      "id": "2433077",
+      "type": "全家",
+      "shop": "全家板橋慶豐店",
+      "tracking": "16343628462",
+      "buyer": "黃泓鈞",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-03",
       "status": "🚚 運送中",
       "status_cls": "transit"
-    },
-    {
-      "id": "2403749",
-      "type": "7-11",
-      "shop": "鼎鑫",
-      "tracking": "C70006206000001",
-      "buyer": "吳芝螢",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-16",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-18",
-      "return_deadline": "2026-06-25"
     },
     {
       "id": "2408185",
@@ -133,32 +109,6 @@
       "buyer": "魏語儂",
       "product": "TW-iBLINGs\\V4",
       "order_date": "2026-06-17",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-22",
-      "return_deadline": "2026-06-29"
-    },
-    {
-      "id": "2403743",
-      "type": "7-11",
-      "shop": "華社",
-      "tracking": "C70006216000001",
-      "buyer": "郭春風",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-16",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-22",
-      "return_deadline": "2026-06-29"
-    },
-    {
-      "id": "2403732",
-      "type": "全家",
-      "shop": "全家新莊萬安店",
-      "tracking": "16342167432",
-      "buyer": "林淑蕙",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-16",
       "status": "✅ 已取件",
       "status_cls": "done",
       "arrived_date": "2026-06-22",
@@ -620,6 +570,43 @@
       "return_deadline": "2026-07-21"
     },
     {
+      "id": "2448606",
+      "type": "全家",
+      "shop": "全家埔里安德店",
+      "tracking": "16344400759",
+      "buyer": "柯惠茹",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-13",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-07-16",
+      "return_deadline": "2026-07-23"
+    },
+    {
+      "id": "2456628",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3415961780",
+      "buyer": "黃妍虹",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-16",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/07/17"
+    },
+    {
+      "id": "2453172",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3413524763",
+      "buyer": "林鴻鈞",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-14",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/07/16"
+    },
+    {
       "id": "2451481",
       "type": "宅配(HCT)",
       "shop": "",
@@ -860,42 +847,6 @@
       "arrived_date": "2026/06/19"
     },
     {
-      "id": "2404288",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3382315856",
-      "buyer": "楊妙驊",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-16",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/18"
-    },
-    {
-      "id": "2403777",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3381443380",
-      "buyer": "黃冠槙",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-06-16",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/17"
-    },
-    {
-      "id": "2403725",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3381443424",
-      "buyer": "張簡郁琪",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-16",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/18"
-    },
-    {
       "id": "2455487",
       "type": "宅配(HCT)",
       "shop": "",
@@ -903,8 +854,9 @@
       "buyer": "何俊龍",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-07-15",
-      "status": "—",
-      "status_cls": "other"
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/07/17"
     },
     {
       "id": "2455485",
@@ -925,20 +877,9 @@
       "buyer": "林宗慶",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-07-15",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2453172",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3413524763",
-      "buyer": "林鴻鈞",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-14",
       "status": "送達超商",
       "status_cls": "other",
-      "arrived_date": "2026/07/16"
+      "arrived_date": "2026/07/17"
     },
     {
       "id": "2447748",
@@ -1019,15 +960,15 @@
       "status_cls": "other"
     },
     {
-      "id": "2403773",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "",
-      "buyer": "黃冠槙",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-06-16",
-      "status": "—",
-      "status_cls": "other"
+      "id": "2455548",
+      "type": "全家",
+      "shop": "全家高雄果豐店",
+      "tracking": "16344683572",
+      "buyer": "段志璊",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26, TW-FEMOIRE SERUM 淡紋水光精華(F)_JUL/26",
+      "order_date": "2026-07-16",
+      "status": "查詢失敗",
+      "status_cls": "error"
     },
     {
       "id": "2454998",
@@ -1096,17 +1037,6 @@
       "status_cls": "error"
     },
     {
-      "id": "2448606",
-      "type": "全家",
-      "shop": "全家埔里安德店",
-      "tracking": "16344400759",
-      "buyer": "柯惠茹",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-13",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
       "id": "2444802",
       "type": "7-11",
       "shop": "新家專",
@@ -1125,17 +1055,6 @@
       "buyer": "鍾俊逸",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-07-08",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2433077",
-      "type": "全家",
-      "shop": "全家板橋慶豐店",
-      "tracking": "16343628462",
-      "buyer": "黃泓鈞",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-03",
       "status": "查詢失敗",
       "status_cls": "error"
     }
