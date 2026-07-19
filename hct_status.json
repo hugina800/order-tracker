@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18 03:54",
+  "updated": "2026-07-19 04:22",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -887,14 +887,14 @@
       "date": null
     },
     "3415961780": {
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "date": "2026/07/17"
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
     },
     "3415071251": {
-      "status": "送達超商",
-      "status_cls": "other",
-      "date": "2026/07/17"
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/18"
     },
     "3415071203": {
       "status": "✅ 已送達",
