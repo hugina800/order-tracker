@@ -1,25 +1,14 @@
 {
-  "updated": "2026-07-20 04:35",
-  "period_from": "2026-06-20",
-  "period_to": "2026-07-20",
+  "updated": "2026-07-21 04:15",
+  "period_from": "2026-06-21",
+  "period_to": "2026-07-21",
   "orders": [
     {
       "id": "2462440",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "",
+      "tracking": "3418945073",
       "buyer": "陳詩雯",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-20",
-      "status": "🚚 運送中",
-      "status_cls": "transit"
-    },
-    {
-      "id": "2462306",
-      "type": "7-11",
-      "shop": "新家專",
-      "tracking": "",
-      "buyer": "胡瑞祥",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-07-20",
       "status": "🚚 運送中",
@@ -514,6 +503,18 @@
       "return_deadline": "2026-07-27"
     },
     {
+      "id": "2456628",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3415961780",
+      "buyer": "黃妍虹",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-16",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/07/17"
+    },
+    {
       "id": "2455487",
       "type": "宅配(HCT)",
       "shop": "",
@@ -560,6 +561,18 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/07/15"
+    },
+    {
+      "id": "2447748",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3409904503",
+      "buyer": "鄭弈暉",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-11",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/07/21"
     },
     {
       "id": "2433966",
@@ -718,28 +731,15 @@
       "arrived_date": "2026/06/24"
     },
     {
-      "id": "2412199",
+      "id": "2463722",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3385588776",
-      "buyer": "邱秀琴",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-21",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/24"
-    },
-    {
-      "id": "2411228",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3385588824",
-      "buyer": "林昱江",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-20",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/23"
+      "tracking": "3419915936",
+      "buyer": "吳婕瑜",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-07-20",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2455485",
@@ -751,18 +751,6 @@
       "order_date": "2026-07-15",
       "status": "—",
       "status_cls": "other"
-    },
-    {
-      "id": "2447748",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3409904503",
-      "buyer": "鄭弈暉",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-11",
-      "status": "送達超商",
-      "status_cls": "other",
-      "arrived_date": "2026/07/14"
     },
     {
       "id": "2444901",
@@ -820,13 +808,13 @@
       "status_cls": "other"
     },
     {
-      "id": "2456628",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3415961780",
-      "buyer": "黃妍虹",
+      "id": "2462306",
+      "type": "7-11",
+      "shop": "新家專",
+      "tracking": "D80529606000001",
+      "buyer": "胡瑞祥",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-16",
+      "order_date": "2026-07-20",
       "status": "查詢失敗",
       "status_cls": "error"
     },
@@ -849,6 +837,17 @@
       "buyer": "胡瑞祥",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-07-10",
+      "status": "查詢失敗",
+      "status_cls": "error"
+    },
+    {
+      "id": "2412199",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3385588776",
+      "buyer": "邱秀琴",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-06-21",
       "status": "查詢失敗",
       "status_cls": "error"
     }
