@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-25 04:07",
-  "period_from": "2026-06-25",
-  "period_to": "2026-07-25",
+  "updated": "2026-07-26 04:25",
+  "period_from": "2026-06-26",
+  "period_to": "2026-07-26",
   "orders": [
     {
       "id": "2470967",
@@ -70,19 +70,6 @@
       "status_cls": "transit"
     },
     {
-      "id": "2418520",
-      "type": "全家",
-      "shop": "全家伸港新港店",
-      "tracking": "16342936195",
-      "buyer": "吳致賢",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-25",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-06-29",
-      "return_deadline": "2026-07-06"
-    },
-    {
       "id": "2422127",
       "type": "7-11",
       "shop": "潮昇門市",
@@ -142,19 +129,6 @@
       "buyer": "李宜紋",
       "product": "TW-iBLINGs\\V4",
       "order_date": "2026-06-29",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-07-06",
-      "return_deadline": "2026-07-13"
-    },
-    {
-      "id": "2419440",
-      "type": "7-11",
-      "shop": "文信",
-      "tracking": "D10666836000001",
-      "buyer": "林佳瑩",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-25",
       "status": "✅ 已取件",
       "status_cls": "done",
       "arrived_date": "2026-07-06",
@@ -741,30 +715,6 @@
       "arrived_date": "2026/06/30"
     },
     {
-      "id": "2419416",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3394028551",
-      "buyer": "吳沛頤",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-25",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/06/30"
-    },
-    {
-      "id": "2419119",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3394028562",
-      "buyer": "黃彥茹",
-      "product": "TW BLZ 百優靈芝錠劑\\V1",
-      "order_date": "2026-06-25",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/07/03"
-    },
-    {
       "id": "2466106",
       "type": "宅配(HCT)",
       "shop": "",
@@ -805,17 +755,6 @@
       "buyer": "陳芊妤",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-07-06",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2419397",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "",
-      "buyer": "吳沛頤",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-06-25",
       "status": "—",
       "status_cls": "other"
     },
