@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19 02:20",
+  "updated": "2026-08-20 02:18",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -917,9 +917,9 @@
       "date": null
     },
     "3423687713": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/24"
     },
     "D91422386000001": {
       "status": "查詢失敗",
@@ -937,9 +937,9 @@
       "date": null
     },
     "3427286730": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/28"
     },
     "3427932174": {
       "status": "查詢失敗",
@@ -962,9 +962,9 @@
       "date": null
     },
     "3427932152": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/03"
     },
     "E10164106000001": {
       "status": "查詢失敗",
@@ -987,9 +987,9 @@
       "date": null
     },
     "3431542752": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/07/31"
     },
     "E16353306000001": {
       "status": "查詢失敗",
@@ -1092,14 +1092,14 @@
       "date": null
     },
     "3441962462": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3441962661": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3441962775": {
       "status": "查詢失敗",
@@ -1117,14 +1117,14 @@
       "date": null
     },
     "3442987586": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/11"
     },
     "3443970353": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/14"
     },
     "E47327276000001": {
       "status": "查詢失敗",
@@ -1172,9 +1172,9 @@
       "date": null
     },
     "3443970283": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3443970272": {
       "status": "查詢失敗",
@@ -1182,9 +1182,9 @@
       "date": null
     },
     "3443970423": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3444747154": {
       "status": "查詢失敗",
@@ -1222,6 +1222,16 @@
       "date": null
     },
     "E73160886000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "16347435343": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "16347435342": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
