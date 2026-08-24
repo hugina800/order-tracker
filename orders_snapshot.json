@@ -1,8 +1,19 @@
 {
-  "updated": "2026-08-23 02:25",
-  "period_from": "2026-07-24",
-  "period_to": "2026-08-23",
+  "updated": "2026-08-24 02:23",
+  "period_from": "2026-07-25",
+  "period_to": "2026-08-24",
   "orders": [
+    {
+      "id": "2522015",
+      "type": "7-11",
+      "shop": "安農",
+      "tracking": "",
+      "buyer": "林定嶢",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-08-24",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
     {
       "id": "2476127",
       "type": "7-11",
@@ -24,19 +35,6 @@
       "buyer": "劉俊亨",
       "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
       "order_date": "2026-07-29",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-07-31",
-      "return_deadline": "2026-08-07"
-    },
-    {
-      "id": "2470967",
-      "type": "7-11",
-      "shop": "千山",
-      "tracking": "E01709316000001",
-      "buyer": "徐廷綸",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-24",
       "status": "✅ 已取件",
       "status_cls": "done",
       "arrived_date": "2026-07-31",
