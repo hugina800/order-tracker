@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-27 10:55",
-  "period_from": "2026-07-28",
-  "period_to": "2026-08-27",
+  "updated": "2026-08-28 12:30",
+  "period_from": "2026-07-29",
+  "period_to": "2026-08-28",
   "orders": [
     {
       "id": "2499061",
@@ -15,29 +15,28 @@
       "status_cls": "transit"
     },
     {
-      "id": "2527996",
+      "id": "2529892",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3463388154",
-      "buyer": "范靜媚",
-      "product": "TW- S/I\\V3, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "tracking": "3464458620",
+      "buyer": "顏子涵",
+      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
       "order_date": "2026-08-27",
       "status": "📦 已集貨",
       "status_cls": "collected",
-      "arrived_date": "2026/08/27"
+      "arrived_date": "2026/08/28"
     },
     {
-      "id": "2476127",
-      "type": "7-11",
-      "shop": "欣重文",
-      "tracking": "E05755496000001",
-      "buyer": "Tracy",
-      "product": "TW-iBLINGs\\V4, TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-07-28",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-07-30",
-      "return_deadline": "2026-08-06"
+      "id": "2529759",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3464458734",
+      "buyer": "何孟修",
+      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-08-27",
+      "status": "📦 已集貨",
+      "status_cls": "collected",
+      "arrived_date": "2026/08/28"
     },
     {
       "id": "2479026",
@@ -521,6 +520,32 @@
       "return_deadline": "2026-09-03"
     },
     {
+      "id": "2524463",
+      "type": "7-11",
+      "shop": "榮躍",
+      "tracking": "E96142376000001",
+      "buyer": "林宗慶",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-08-25",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-08-28",
+      "return_deadline": "2026-09-04"
+    },
+    {
+      "id": "2522015",
+      "type": "7-11",
+      "shop": "安農",
+      "tracking": "E95448496000001",
+      "buyer": "林定嶢",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-08-24",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-08-28",
+      "return_deadline": "2026-09-04"
+    },
+    {
       "id": "2524428",
       "type": "宅配(HCT)",
       "shop": "",
@@ -785,15 +810,27 @@
       "arrived_date": "2026/07/31"
     },
     {
-      "id": "2529759",
+      "id": "2529891",
       "type": "宅配(HCT)",
       "shop": "",
       "tracking": "",
-      "buyer": "何孟修",
+      "buyer": "顏子涵",
       "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
       "order_date": "2026-08-27",
       "status": "—",
       "status_cls": "other"
+    },
+    {
+      "id": "2527996",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3463388154",
+      "buyer": "范靜媚",
+      "product": "TW- S/I\\V3, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-08-27",
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/08/28"
     },
     {
       "id": "2520986",
@@ -884,34 +921,12 @@
       "status_cls": "error"
     },
     {
-      "id": "2524463",
-      "type": "7-11",
-      "shop": "榮躍",
-      "tracking": "E96142376000001",
-      "buyer": "林宗慶",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-25",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
       "id": "2523743",
       "type": "7-11",
       "shop": "稻豐門市",
       "tracking": "E95448176000001",
       "buyer": "王君睿",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-24",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2522015",
-      "type": "7-11",
-      "shop": "安農",
-      "tracking": "E95448496000001",
-      "buyer": "林定嶢",
-      "product": "TW-iBLINGs\\V4",
       "order_date": "2026-08-24",
       "status": "查詢失敗",
       "status_cls": "error"
