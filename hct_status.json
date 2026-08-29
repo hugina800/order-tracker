@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-28 12:30",
+  "updated": "2026-08-29 07:40",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -1297,14 +1297,14 @@
       "date": null
     },
     "3464458620": {
-      "status": "📦 已集貨",
-      "status_cls": "collected",
-      "date": "2026/08/28"
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/29"
     },
     "3464458734": {
-      "status": "📦 已集貨",
-      "status_cls": "collected",
-      "date": "2026/08/28"
+      "status": "轉運中",
+      "status_cls": "other",
+      "date": "2026/08/29"
     }
   }
 }
