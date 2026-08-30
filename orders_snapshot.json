@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-29 07:40",
-  "period_from": "2026-07-30",
-  "period_to": "2026-08-29",
+  "updated": "2026-08-30 06:13",
+  "period_from": "2026-07-31",
+  "period_to": "2026-08-30",
   "orders": [
     {
       "id": "2499061",
@@ -734,18 +734,6 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/08/05"
-    },
-    {
-      "id": "2480135",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3431542715",
-      "buyer": "簡孝龍",
-      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4",
-      "order_date": "2026-07-30",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/07/31"
     },
     {
       "id": "2529891",
