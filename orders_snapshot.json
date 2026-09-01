@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-31 06:39",
-  "period_from": "2026-08-01",
-  "period_to": "2026-08-31",
+  "updated": "2026-09-01 06:02",
+  "period_from": "2026-08-02",
+  "period_to": "2026-09-01",
   "orders": [
     {
       "id": "2534502",
@@ -541,6 +541,18 @@
       "arrived_date": "2026/08/29"
     },
     {
+      "id": "2527996",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3463388154",
+      "buyer": "范靜媚",
+      "product": "TW- S/I\\V3, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-08-27",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/08/31"
+    },
+    {
       "id": "2524428",
       "type": "宅配(HCT)",
       "shop": "",
@@ -733,18 +745,6 @@
       "arrived_date": "2026/08/07"
     },
     {
-      "id": "2484726",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3433785320",
-      "buyer": "邱秀琴",
-      "product": "TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26, TW-iBLINGs\\V4",
-      "order_date": "2026-08-01",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/08/09"
-    },
-    {
       "id": "2529891",
       "type": "宅配(HCT)",
       "shop": "",
@@ -766,18 +766,6 @@
       "status": "送達超商",
       "status_cls": "other",
       "arrived_date": "2026/08/31"
-    },
-    {
-      "id": "2527996",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3463388154",
-      "buyer": "范靜媚",
-      "product": "TW- S/I\\V3, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-27",
-      "status": "送達超商",
-      "status_cls": "other",
-      "arrived_date": "2026/08/28"
     },
     {
       "id": "2520986",
@@ -820,28 +808,6 @@
       "buyer": "陳毅傑",
       "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
       "order_date": "2026-08-06",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2484669",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "",
-      "buyer": "高皓騰",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-08-01",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2484654",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "",
-      "buyer": "高皓騰",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-08-01",
       "status": "—",
       "status_cls": "other"
     },
@@ -908,17 +874,6 @@
       "buyer": "吳奇恩",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-08-19",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2484715",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3433785331",
-      "buyer": "邱秀琴",
-      "product": "TW-iBLINGs\\V4, TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26",
-      "order_date": "2026-08-01",
       "status": "查詢失敗",
       "status_cls": "error"
     }
