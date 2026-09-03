@@ -1,8 +1,19 @@
 {
-  "updated": "2026-09-02 05:26",
-  "period_from": "2026-08-03",
-  "period_to": "2026-09-02",
+  "updated": "2026-09-03 05:29",
+  "period_from": "2026-08-04",
+  "period_to": "2026-09-03",
   "orders": [
+    {
+      "id": "2541651",
+      "type": "7-11",
+      "shop": "華社",
+      "tracking": "",
+      "buyer": "郭春風",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-09-03",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
     {
       "id": "2534502",
       "type": "7-11",
@@ -66,32 +77,6 @@
       "buyer": "李齊臺",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW SPIRO 雙藻錠分享包(F)_AUG/26",
       "order_date": "2026-08-04",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-06",
-      "return_deadline": "2026-08-13"
-    },
-    {
-      "id": "2485728",
-      "type": "7-11",
-      "shop": "招英",
-      "tracking": "E24382776000001",
-      "buyer": "邱敬軒",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-08-03",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-06",
-      "return_deadline": "2026-08-13"
-    },
-    {
-      "id": "2485722",
-      "type": "7-11",
-      "shop": "鹿工",
-      "tracking": "E24383026000001",
-      "buyer": "吳致賢",
-      "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-08-03",
       "status": "✅ 已取件",
       "status_cls": "done",
       "arrived_date": "2026-08-06",
@@ -782,12 +767,13 @@
       "id": "2539869",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "",
+      "tracking": "3470446151",
       "buyer": "吳莉莉",
       "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
       "order_date": "2026-09-02",
-      "status": "—",
-      "status_cls": "other"
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/09/03"
     },
     {
       "id": "2529891",
@@ -843,6 +829,17 @@
       "order_date": "2026-08-06",
       "status": "—",
       "status_cls": "other"
+    },
+    {
+      "id": "2541368",
+      "type": "全家",
+      "shop": "全家冬山群英店",
+      "tracking": "16348591708",
+      "buyer": "楊煥培",
+      "product": "TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-02",
+      "status": "查詢失敗",
+      "status_cls": "error"
     },
     {
       "id": "2534500",
