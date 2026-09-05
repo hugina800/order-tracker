@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04 05:27",
+  "updated": "2026-09-05 05:16",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -1335,6 +1335,11 @@
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
+    },
+    "3473590116": {
+      "status": "轉運中",
+      "status_cls": "other",
+      "date": "2026/09/05"
     }
   }
 }
