@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-05 05:16",
-  "period_from": "2026-08-06",
-  "period_to": "2026-09-05",
+  "updated": "2026-09-06 05:30",
+  "period_from": "2026-08-07",
+  "period_to": "2026-09-06",
   "orders": [
     {
       "id": "2544013",
@@ -70,19 +70,6 @@
       "status_cls": "transit"
     },
     {
-      "id": "2492591",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3439608885",
-      "buyer": "邱泓偉",
-      "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-08-06",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-10",
-      "return_deadline": "2026-08-17"
-    },
-    {
       "id": "2494577",
       "type": "全家",
       "shop": "全家高雄黃興店",
@@ -90,32 +77,6 @@
       "buyer": "楊鈺慈",
       "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-08-07",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-11",
-      "return_deadline": "2026-08-18"
-    },
-    {
-      "id": "2492636",
-      "type": "7-11",
-      "shop": "好家庭",
-      "tracking": "E34708556000001",
-      "buyer": "鄭開鴻",
-      "product": "TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26, TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-06",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-11",
-      "return_deadline": "2026-08-18"
-    },
-    {
-      "id": "2492611",
-      "type": "7-11",
-      "shop": "好家庭",
-      "tracking": "E34708626000001",
-      "buyer": "鄭開鴻",
-      "product": "TW-iBLINGs\\V4, TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-06",
       "status": "✅ 已取件",
       "status_cls": "done",
       "arrived_date": "2026-08-11",
@@ -664,16 +625,15 @@
       "arrived_date": "2026/08/13"
     },
     {
-      "id": "2493796",
+      "id": "2547753",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3439903213",
-      "buyer": "陳毅傑",
-      "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-08-06",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/08/07"
+      "tracking": "",
+      "buyer": "葉守逸",
+      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-05",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2545913",
@@ -762,17 +722,6 @@
       "buyer": "高皓騰",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-08-19",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2492830",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "",
-      "buyer": "陳毅傑",
-      "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-08-06",
       "status": "—",
       "status_cls": "other"
     },
