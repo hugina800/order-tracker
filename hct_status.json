@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07 05:40",
+  "updated": "2026-09-08 05:38",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -1092,14 +1092,14 @@
       "date": null
     },
     "3441962462": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3441962661": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3441962775": {
       "status": "查詢失敗",
@@ -1117,14 +1117,14 @@
       "date": null
     },
     "3442987586": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/11"
     },
     "3443970353": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/14"
     },
     "E47327276000001": {
       "status": "查詢失敗",
@@ -1172,24 +1172,24 @@
       "date": null
     },
     "3443970283": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3443970272": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/13"
     },
     "3443970423": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/12"
     },
     "3444747154": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/13"
     },
     "E54139436000001": {
       "status": "查詢失敗",
@@ -1212,9 +1212,9 @@
       "date": null
     },
     "3450067515": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/18"
     },
     "E68955076000001": {
       "status": "查詢失敗",
@@ -1247,14 +1247,14 @@
       "date": null
     },
     "3456578436": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/26"
     },
     "3455737176": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/22"
     },
     "16347602969": {
       "status": "查詢失敗",
@@ -1262,9 +1262,9 @@
       "date": null
     },
     "3459729324": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/27"
     },
     "E96142376000001": {
       "status": "查詢失敗",
@@ -1282,9 +1282,9 @@
       "date": null
     },
     "3463388154": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/31"
     },
     "F03435246000001": {
       "status": "查詢失敗",
@@ -1297,9 +1297,9 @@
       "date": null
     },
     "3464458620": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/08/29"
     },
     "3464458734": {
       "status": "✅ 已送達",
@@ -1322,9 +1322,9 @@
       "date": null
     },
     "3470446151": {
-      "status": "送達超商",
-      "status_cls": "other",
-      "date": "2026/09/03"
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/09/07"
     },
     "16348591708": {
       "status": "查詢失敗",
@@ -1337,26 +1337,46 @@
       "date": null
     },
     "3473590116": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/09/08"
     },
     "3474871934": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/09/08"
     },
     "3474871875": {
-      "status": "查詢失敗",
-      "status_cls": "error",
-      "date": null
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/09/08"
     },
     "3474872144": {
+      "status": "轉運中",
+      "status_cls": "other",
+      "date": "2026/09/08"
+    },
+    "F37622406000001": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
     },
-    "F37622406000001": {
+    "F38842326000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "F38842266000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "F38842226000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "16348922688": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
