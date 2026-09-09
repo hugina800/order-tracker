@@ -1,16 +1,27 @@
 {
-  "updated": "2026-09-08 05:38",
-  "period_from": "2026-08-09",
-  "period_to": "2026-09-08",
+  "updated": "2026-09-09 05:44",
+  "period_from": "2026-08-10",
+  "period_to": "2026-09-09",
   "orders": [
     {
-      "id": "2544013",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3473590186",
-      "buyer": "鄧宗程",
-      "product": "TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-04",
+      "id": "2554610",
+      "type": "全家",
+      "shop": "全家興安店",
+      "tracking": "",
+      "buyer": "賴明宏",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-09",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
+    {
+      "id": "2553943",
+      "type": "全家",
+      "shop": "全家屏東武成店",
+      "tracking": "",
+      "buyer": "石馨婕",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-08",
       "status": "🚚 運送中",
       "status_cls": "transit"
     },
@@ -382,6 +393,93 @@
       "return_deadline": "2026-09-14"
     },
     {
+      "id": "2544013",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3473590186",
+      "buyer": "鄧宗程",
+      "product": "TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-04",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-09-08",
+      "return_deadline": "2026-09-15"
+    },
+    {
+      "id": "2541368",
+      "type": "全家",
+      "shop": "全家冬山群英店",
+      "tracking": "16348591708",
+      "buyer": "楊煥培",
+      "product": "TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-02",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-09-08",
+      "return_deadline": "2026-09-15"
+    },
+    {
+      "id": "2534498",
+      "type": "7-11",
+      "shop": "果林",
+      "tracking": "F15737026000001",
+      "buyer": "徐志華",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-08-31",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-09-08",
+      "return_deadline": "2026-09-15"
+    },
+    {
+      "id": "2547870",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3474871875",
+      "buyer": "張宜婷",
+      "product": "TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-06",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/09"
+    },
+    {
+      "id": "2547753",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3474871934",
+      "buyer": "葉守逸",
+      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-05",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/08"
+    },
+    {
+      "id": "2545913",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3474872144",
+      "buyer": "梁家福",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-04",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/08"
+    },
+    {
+      "id": "2544748",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3473590116",
+      "buyer": "黃冠憲",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-04",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/08"
+    },
+    {
       "id": "2539869",
       "type": "宅配(HCT)",
       "shop": "",
@@ -514,6 +612,18 @@
       "arrived_date": "2026/08/12"
     },
     {
+      "id": "2501337",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3443970316",
+      "buyer": "洪佑昇",
+      "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-08-10",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/08/12"
+    },
+    {
       "id": "2500915",
       "type": "宅配(HCT)",
       "shop": "",
@@ -548,78 +658,6 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/08/11"
-    },
-    {
-      "id": "2498288",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3441962462",
-      "buyer": "楊蕙瑄",
-      "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-09",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/08/12"
-    },
-    {
-      "id": "2497884",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3441962661",
-      "buyer": "宋尹袗",
-      "product": "TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26, TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-09",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/08/12"
-    },
-    {
-      "id": "2547870",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3474871875",
-      "buyer": "張宜婷",
-      "product": "TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-06",
-      "status": "送達超商",
-      "status_cls": "other",
-      "arrived_date": "2026/09/08"
-    },
-    {
-      "id": "2547753",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3474871934",
-      "buyer": "葉守逸",
-      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-09-05",
-      "status": "送達超商",
-      "status_cls": "other",
-      "arrived_date": "2026/09/08"
-    },
-    {
-      "id": "2545913",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3474872144",
-      "buyer": "梁家福",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-09-04",
-      "status": "轉運中",
-      "status_cls": "other",
-      "arrived_date": "2026/09/08"
-    },
-    {
-      "id": "2544748",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3473590116",
-      "buyer": "黃冠憲",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-09-04",
-      "status": "送達超商",
-      "status_cls": "other",
-      "arrived_date": "2026/09/08"
     },
     {
       "id": "2539938",
@@ -732,33 +770,11 @@
       "status_cls": "error"
     },
     {
-      "id": "2541368",
-      "type": "全家",
-      "shop": "全家冬山群英店",
-      "tracking": "16348591708",
-      "buyer": "楊煥培",
-      "product": "TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-02",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
       "id": "2534500",
       "type": "7-11",
       "shop": "新有光",
       "tracking": "F15737006000001",
       "buyer": "吳秉宸",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-08-31",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2534498",
-      "type": "7-11",
-      "shop": "果林",
-      "tracking": "F15737026000001",
-      "buyer": "徐志華",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
       "order_date": "2026-08-31",
       "status": "查詢失敗",
@@ -772,17 +788,6 @@
       "buyer": "游幃捷",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
       "order_date": "2026-08-26",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2501337",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3443970316",
-      "buyer": "洪佑昇",
-      "product": "TW-TMK20s&SGLOW&MOVEON(PWP)_AUG/26, TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-10",
       "status": "查詢失敗",
       "status_cls": "error"
     }
