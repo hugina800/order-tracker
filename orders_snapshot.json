@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-11 05:38",
-  "period_from": "2026-08-12",
-  "period_to": "2026-09-11",
+  "updated": "2026-09-12 05:24",
+  "period_from": "2026-08-13",
+  "period_to": "2026-09-12",
   "orders": [
     {
       "id": "2558805",
@@ -490,6 +490,17 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/08/18"
+    },
+    {
+      "id": "2561202",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "",
+      "buyer": "吳麗文",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-12",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2539938",
