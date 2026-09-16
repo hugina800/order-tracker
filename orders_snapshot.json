@@ -1,20 +1,8 @@
 {
-  "updated": "2026-09-15 05:48",
-  "period_from": "2026-08-16",
-  "period_to": "2026-09-15",
+  "updated": "2026-09-16 05:40",
+  "period_from": "2026-08-17",
+  "period_to": "2026-09-16",
   "orders": [
-    {
-      "id": "2561202",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3484672214",
-      "buyer": "吳麗文",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
-      "order_date": "2026-09-12",
-      "status": "🚚 配送中",
-      "status_cls": "transit",
-      "arrived_date": "2026/09/15"
-    },
     {
       "id": "2534502",
       "type": "7-11",
@@ -319,6 +307,18 @@
       "arrived_date": "2026/09/15"
     },
     {
+      "id": "2561202",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3484672214",
+      "buyer": "吳麗文",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-12",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/15"
+    },
+    {
       "id": "2547870",
       "type": "宅配(HCT)",
       "shop": "",
@@ -451,16 +451,15 @@
       "arrived_date": "2026/08/22"
     },
     {
-      "id": "2510038",
+      "id": "2568518",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3450067515",
-      "buyer": "高瑅滺",
-      "product": "TW ZENSO ADV DREAM SET 30天計畫, TW-KEEP BURN SET續燃組\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-16",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/08/18"
+      "tracking": "",
+      "buyer": "沈蒨誼",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-15",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2566380",
