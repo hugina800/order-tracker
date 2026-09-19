@@ -1,8 +1,19 @@
 {
-  "updated": "2026-09-18 05:34",
-  "period_from": "2026-08-19",
-  "period_to": "2026-09-18",
+  "updated": "2026-09-19 05:31",
+  "period_from": "2026-08-20",
+  "period_to": "2026-09-19",
   "orders": [
+    {
+      "id": "2574764",
+      "type": "全家",
+      "shop": "全家基隆樂華店",
+      "tracking": "",
+      "buyer": "彭思祖",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-09-19",
+      "status": "🚚 運送中",
+      "status_cls": "transit"
+    },
     {
       "id": "2534502",
       "type": "7-11",
@@ -37,30 +48,6 @@
       "status_cls": "transit"
     },
     {
-      "id": "2515307",
-      "type": "全家",
-      "shop": "全家新竹荷蘭村店",
-      "tracking": "16347435343",
-      "buyer": "吳奇恩",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-19",
-      "status": "🚚 運送中",
-      "status_cls": "transit"
-    },
-    {
-      "id": "2514508",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3454288913",
-      "buyer": "江珮伶",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-19",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-21",
-      "return_deadline": "2026-08-28"
-    },
-    {
       "id": "2518121",
       "type": "全家",
       "shop": "全家大里新興店",
@@ -81,19 +68,6 @@
       "buyer": "劉濠滋",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-08-20",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-25",
-      "return_deadline": "2026-09-01"
-    },
-    {
-      "id": "2514498",
-      "type": "全家",
-      "shop": "全家官田新田店",
-      "tracking": "16347435342",
-      "buyer": "蔡忠俊",
-      "product": "TW- S/I\\V3, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-19",
       "status": "✅ 已取件",
       "status_cls": "done",
       "arrived_date": "2026-08-25",
@@ -295,6 +269,44 @@
       "return_deadline": "2026-09-23"
     },
     {
+      "id": "2556090",
+      "type": "7-11",
+      "shop": "新昌和",
+      "tracking": "F62119826000001",
+      "buyer": "莊明志",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-09",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-09-18",
+      "return_deadline": "2026-09-25"
+    },
+    {
+      "id": "2549145",
+      "type": "全家",
+      "shop": "全家三峽光明店",
+      "tracking": "16348922688",
+      "buyer": "阿龍",
+      "product": "TW-iBLINGs\\V4",
+      "order_date": "2026-09-07",
+      "status": "✅ 已取件",
+      "status_cls": "done",
+      "arrived_date": "2026-09-18",
+      "return_deadline": "2026-09-25"
+    },
+    {
+      "id": "2570645",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3492369274",
+      "buyer": "廖苡秀",
+      "product": "TW-iBLINGs\\V4, TW-WELLOUS FREE ITEM(F)_SEP/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-17",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/19"
+    },
+    {
       "id": "2568518",
       "type": "宅配(HCT)",
       "shop": "",
@@ -487,6 +499,17 @@
       "arrived_date": "2026/08/22"
     },
     {
+      "id": "2575296",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "",
+      "buyer": "黃彥茹",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26",
+      "order_date": "2026-09-19",
+      "status": "—",
+      "status_cls": "other"
+    },
+    {
       "id": "2572242",
       "type": "宅配(HCT)",
       "shop": "",
@@ -495,17 +518,6 @@
       "product": "TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26, TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-09-17",
       "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2570645",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3492369274",
-      "buyer": "廖苡秀",
-      "product": "TW-iBLINGs\\V4, TW-WELLOUS FREE ITEM(F)_SEP/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-17",
-      "status": "網站地圖｜隱私權政策｜個資政策聲明｜與我們聯絡",
       "status_cls": "other"
     },
     {
@@ -549,17 +561,6 @@
       "buyer": "張宜婷",
       "product": "TW-iBLINGs\\V4",
       "order_date": "2026-08-20",
-      "status": "—",
-      "status_cls": "other"
-    },
-    {
-      "id": "2515783",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "",
-      "buyer": "高皓騰",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-19",
       "status": "—",
       "status_cls": "other"
     },
@@ -619,17 +620,6 @@
       "status_cls": "error"
     },
     {
-      "id": "2556090",
-      "type": "7-11",
-      "shop": "新昌和",
-      "tracking": "F62119826000001",
-      "buyer": "莊明志",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-09",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
       "id": "2554610",
       "type": "全家",
       "shop": "全家興安店",
@@ -648,17 +638,6 @@
       "buyer": "石馨婕",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-09-08",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2549145",
-      "type": "全家",
-      "shop": "全家三峽光明店",
-      "tracking": "16348922688",
-      "buyer": "阿龍",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-09-07",
       "status": "查詢失敗",
       "status_cls": "error"
     },
