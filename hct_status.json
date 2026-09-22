@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21 05:53",
+  "updated": "2026-09-22 05:52",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -1457,11 +1457,51 @@
       "date": null
     },
     "3495210283": {
-      "status": "網站地圖｜隱私權政策｜個資政策聲明｜與我們聯絡",
-      "status_cls": "other",
-      "date": null
+      "status": "🚚 配送中",
+      "status_cls": "transit",
+      "date": "2026/09/22"
     },
     "16350107148": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "3495210316": {
+      "status": "轉運中",
+      "status_cls": "other",
+      "date": "2026/09/22"
+    },
+    "3494234376": {
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/09/22"
+    },
+    "3494234520": {
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/09/22"
+    },
+    "3494234424": {
+      "status": "🚚 配送中",
+      "status_cls": "transit",
+      "date": "2026/09/22"
+    },
+    "F86715136000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "F86715156000001": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "16350165657": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "16350165658": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
