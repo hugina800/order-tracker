@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22 05:52",
+  "updated": "2026-09-23 05:31",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -1457,8 +1457,8 @@
       "date": null
     },
     "3495210283": {
-      "status": "🚚 配送中",
-      "status_cls": "transit",
+      "status": "送達超商",
+      "status_cls": "other",
       "date": "2026/09/22"
     },
     "16350107148": {
@@ -1477,13 +1477,13 @@
       "date": "2026/09/22"
     },
     "3494234520": {
-      "status": "送達超商",
-      "status_cls": "other",
-      "date": "2026/09/22"
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/09/23"
     },
     "3494234424": {
-      "status": "🚚 配送中",
-      "status_cls": "transit",
+      "status": "✅ 已送達",
+      "status_cls": "done",
       "date": "2026/09/22"
     },
     "F86715136000001": {
