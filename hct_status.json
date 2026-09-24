@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23 05:31",
+  "updated": "2026-09-24 05:54",
   "tracking": {
     "3340760021": {
       "status": "✅ 已送達",
@@ -1337,9 +1337,9 @@
       "date": null
     },
     "3473590116": {
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "date": "2026/09/08"
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
     },
     "3474871934": {
       "status": "✅ 已送達",
@@ -1457,9 +1457,9 @@
       "date": null
     },
     "3495210283": {
-      "status": "送達超商",
-      "status_cls": "other",
-      "date": "2026/09/22"
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/09/23"
     },
     "16350107148": {
       "status": "查詢失敗",
@@ -1467,9 +1467,9 @@
       "date": null
     },
     "3495210316": {
-      "status": "轉運中",
-      "status_cls": "other",
-      "date": "2026/09/22"
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "date": "2026/09/23"
     },
     "3494234376": {
       "status": "送達超商",
@@ -1502,6 +1502,16 @@
       "date": null
     },
     "16350165658": {
+      "status": "查詢失敗",
+      "status_cls": "error",
+      "date": null
+    },
+    "3498809672": {
+      "status": "送達超商",
+      "status_cls": "other",
+      "date": "2026/09/24"
+    },
+    "F94046606000001": {
       "status": "查詢失敗",
       "status_cls": "error",
       "date": null
