@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-24 05:54",
-  "period_from": "2026-08-25",
-  "period_to": "2026-09-24",
+  "updated": "2026-09-25 05:48",
+  "period_from": "2026-08-26",
+  "period_to": "2026-09-25",
   "orders": [
     {
       "id": "2549130",
@@ -46,19 +46,6 @@
       "order_date": "2026-08-26",
       "status": "🚚 運送中",
       "status_cls": "transit"
-    },
-    {
-      "id": "2524463",
-      "type": "7-11",
-      "shop": "榮躍",
-      "tracking": "E96142376000001",
-      "buyer": "林宗慶",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-25",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-08-28",
-      "return_deadline": "2026-09-04"
     },
     {
       "id": "2528005",
@@ -293,6 +280,18 @@
       "arrived_date": "2026/09/23"
     },
     {
+      "id": "2576775",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3494234376",
+      "buyer": "林彥余",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-WELLOUS FREE ITEM(F)_SEP/26",
+      "order_date": "2026-09-20",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/24"
+    },
+    {
       "id": "2576579",
       "type": "宅配(HCT)",
       "shop": "",
@@ -425,6 +424,18 @@
       "arrived_date": "2026/09/08"
     },
     {
+      "id": "2544748",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3473590116",
+      "buyer": "黃冠憲",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-04",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/08"
+    },
+    {
       "id": "2539869",
       "type": "宅配(HCT)",
       "shop": "",
@@ -473,16 +484,37 @@
       "arrived_date": "2026/08/31"
     },
     {
-      "id": "2524428",
+      "id": "2586571",
       "type": "宅配(HCT)",
       "shop": "",
-      "tracking": "3459729324",
-      "buyer": "李驊澄",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-08-25",
-      "status": "✅ 已送達",
-      "status_cls": "done",
-      "arrived_date": "2026/08/27"
+      "tracking": "",
+      "buyer": "東宛諭",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26",
+      "order_date": "2026-09-25",
+      "status": "—",
+      "status_cls": "other"
+    },
+    {
+      "id": "2586532",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "",
+      "buyer": "李茹女昱",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-25",
+      "status": "—",
+      "status_cls": "other"
+    },
+    {
+      "id": "2585356",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "",
+      "buyer": "王馨瑩",
+      "product": "TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-24",
+      "status": "—",
+      "status_cls": "other"
     },
     {
       "id": "2582871",
@@ -517,18 +549,6 @@
       "order_date": "2026-09-21",
       "status": "—",
       "status_cls": "other"
-    },
-    {
-      "id": "2576775",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3494234376",
-      "buyer": "林彥余",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-WELLOUS FREE ITEM(F)_SEP/26",
-      "order_date": "2026-09-20",
-      "status": "送達超商",
-      "status_cls": "other",
-      "arrived_date": "2026/09/22"
     },
     {
       "id": "2575296",
@@ -573,6 +593,17 @@
       "order_date": "2026-08-27",
       "status": "—",
       "status_cls": "other"
+    },
+    {
+      "id": "2585344",
+      "type": "全家",
+      "shop": "全家歸仁保興店",
+      "tracking": "16350442217",
+      "buyer": "王祉丁",
+      "product": "TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-24",
+      "status": "查詢失敗",
+      "status_cls": "error"
     },
     {
       "id": "2582290",
@@ -681,17 +712,6 @@
       "buyer": "賴明宏",
       "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-09-09",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2544748",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3473590116",
-      "buyer": "黃冠憲",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-09-04",
       "status": "查詢失敗",
       "status_cls": "error"
     }
