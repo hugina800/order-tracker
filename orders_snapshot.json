@@ -1,18 +1,19 @@
 {
-  "updated": "2026-10-01 06:51",
-  "period_from": "2026-09-01",
-  "period_to": "2026-10-01",
+  "updated": "2026-10-02 06:42",
+  "period_from": "2026-09-02",
+  "period_to": "2026-10-02",
   "orders": [
     {
-      "id": "2599578",
-      "type": "7-11",
-      "shop": "興泰",
-      "tracking": "",
-      "buyer": "熊偉凱",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
-      "order_date": "2026-10-01",
-      "status": "🚚 運送中",
-      "status_cls": "transit"
+      "id": "2598024",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3805128692",
+      "buyer": "蔡奇儒",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-30",
+      "status": "🚚 配送中",
+      "status_cls": "transit",
+      "arrived_date": "2026/10/02"
     },
     {
       "id": "2563525",
@@ -289,6 +290,30 @@
       "return_deadline": "2026-10-07"
     },
     {
+      "id": "2597342",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3805128740",
+      "buyer": "林雯貞",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-30",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/10/02"
+    },
+    {
+      "id": "2586571",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3801107074",
+      "buyer": "東宛諭",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26",
+      "order_date": "2026-09-25",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/10/01"
+    },
+    {
       "id": "2582871",
       "type": "宅配(HCT)",
       "shop": "",
@@ -313,6 +338,18 @@
       "arrived_date": "2026/09/23"
     },
     {
+      "id": "2578077",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3495210316",
+      "buyer": "翁婷芬",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-21",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/23"
+    },
+    {
       "id": "2576775",
       "type": "宅配(HCT)",
       "shop": "",
@@ -325,6 +362,30 @@
       "arrived_date": "2026/09/24"
     },
     {
+      "id": "2576579",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3494234424",
+      "buyer": "許志寬",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-20",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/22"
+    },
+    {
+      "id": "2576079",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3494234520",
+      "buyer": "陳聰寅",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-19",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/23"
+    },
+    {
       "id": "2570645",
       "type": "宅配(HCT)",
       "shop": "",
@@ -335,6 +396,54 @@
       "status": "✅ 已送達",
       "status_cls": "done",
       "arrived_date": "2026/09/19"
+    },
+    {
+      "id": "2568518",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3489708375",
+      "buyer": "沈蒨誼",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-15",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/17"
+    },
+    {
+      "id": "2566380",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3489708401",
+      "buyer": "賴韻如",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-14",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/17"
+    },
+    {
+      "id": "2562568",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3486215003",
+      "buyer": "謝美珍",
+      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-13",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/17"
+    },
+    {
+      "id": "2562540",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3484671901",
+      "buyer": "黃妍虹",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-SGLOW 亮密滑絲錠(F)_唯你配2.0",
+      "order_date": "2026-09-13",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/15"
     },
     {
       "id": "2561202",
@@ -361,6 +470,42 @@
       "arrived_date": "2026/09/09"
     },
     {
+      "id": "2547753",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3474871934",
+      "buyer": "葉守逸",
+      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-05",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/08"
+    },
+    {
+      "id": "2545913",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3474872144",
+      "buyer": "梁家福",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-04",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/08"
+    },
+    {
+      "id": "2544748",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3473590116",
+      "buyer": "黃冠憲",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
+      "order_date": "2026-09-04",
+      "status": "✅ 已送達",
+      "status_cls": "done",
+      "arrived_date": "2026/09/08"
+    },
+    {
       "id": "2539869",
       "type": "宅配(HCT)",
       "shop": "",
@@ -380,8 +525,45 @@
       "buyer": "潘韋全",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-09-30",
-      "status": "—",
-      "status_cls": "other"
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/10/02"
+    },
+    {
+      "id": "2598168",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3805128611",
+      "buyer": "林鴻翔",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-30",
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/10/02"
+    },
+    {
+      "id": "2598114",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3805128644",
+      "buyer": "林治澤",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-30",
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/10/02"
+    },
+    {
+      "id": "2596914",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3804092482",
+      "buyer": "吳偉禎",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
+      "order_date": "2026-09-30",
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/10/01"
     },
     {
       "id": "2593802",
@@ -403,6 +585,18 @@
       "buyer": "王馨瑩",
       "product": "TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-09-28",
+      "status": "送達超商",
+      "status_cls": "other",
+      "arrived_date": "2026/09/30"
+    },
+    {
+      "id": "2586532",
+      "type": "宅配(HCT)",
+      "shop": "",
+      "tracking": "3801107085",
+      "buyer": "李茹女昱",
+      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
+      "order_date": "2026-09-25",
       "status": "送達超商",
       "status_cls": "other",
       "arrived_date": "2026/09/30"
@@ -474,13 +668,24 @@
       "status_cls": "other"
     },
     {
-      "id": "2598168",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3805128611",
-      "buyer": "林鴻翔",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-30",
+      "id": "2601553",
+      "type": "7-11",
+      "shop": "福溢",
+      "tracking": "G20272796000001",
+      "buyer": "林嘉",
+      "product": "TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26, TW-iBLINGs\\V4",
+      "order_date": "2026-10-02",
+      "status": "查詢失敗",
+      "status_cls": "error"
+    },
+    {
+      "id": "2599578",
+      "type": "7-11",
+      "shop": "興泰",
+      "tracking": "G17179256000001",
+      "buyer": "熊偉凱",
+      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉",
+      "order_date": "2026-10-01",
       "status": "查詢失敗",
       "status_cls": "error"
     },
@@ -491,28 +696,6 @@
       "tracking": "16350902526",
       "buyer": "劉濠滋",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-30",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2598114",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3805128644",
-      "buyer": "林治澤",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
-      "order_date": "2026-09-30",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2598024",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3805128692",
-      "buyer": "蔡奇儒",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
       "order_date": "2026-09-30",
       "status": "查詢失敗",
       "status_cls": "error"
@@ -535,28 +718,6 @@
       "tracking": "G15853546000001",
       "buyer": "郭建志",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-WELLOUS FREE ITEM(F)_SEP/26",
-      "order_date": "2026-09-30",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2597342",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3805128740",
-      "buyer": "林雯貞",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
-      "order_date": "2026-09-30",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2596914",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3804092482",
-      "buyer": "吳偉禎",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
       "order_date": "2026-09-30",
       "status": "查詢失敗",
       "status_cls": "error"
@@ -595,28 +756,6 @@
       "status_cls": "error"
     },
     {
-      "id": "2586571",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3801107074",
-      "buyer": "東宛諭",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-HAIR TONIC&MIZU&DAITTO(PWP)_AUG/26",
-      "order_date": "2026-09-25",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2586532",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3801107085",
-      "buyer": "李茹女昱",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-SGLOW內外養護體驗組_AUG/26, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-25",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
       "id": "2582290",
       "type": "7-11",
       "shop": "巨航",
@@ -628,17 +767,6 @@
       "status_cls": "error"
     },
     {
-      "id": "2578077",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3495210316",
-      "buyer": "翁婷芬",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
-      "order_date": "2026-09-21",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
       "id": "2577363",
       "type": "7-11",
       "shop": "晟興",
@@ -646,105 +774,6 @@
       "buyer": "洪國基",
       "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
       "order_date": "2026-09-21",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2576579",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3494234424",
-      "buyer": "許志寬",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-20",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2576079",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3494234520",
-      "buyer": "陳聰寅",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-19",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2568518",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3489708375",
-      "buyer": "沈蒨誼",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0",
-      "order_date": "2026-09-15",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2566380",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3489708401",
-      "buyer": "賴韻如",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-14",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2562568",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3486215003",
-      "buyer": "謝美珍",
-      "product": "TW-iBLINGs\\V4, TW-KURO DAITTO 2s (VANILLA)(F)_JUL/26",
-      "order_date": "2026-09-13",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2562540",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3484671901",
-      "buyer": "黃妍虹",
-      "product": "TW-6SGLOW 亮密滑絲錠_唯你配2.0, TW-SGLOW 亮密滑絲錠(F)_唯你配2.0",
-      "order_date": "2026-09-13",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2547753",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3474871934",
-      "buyer": "葉守逸",
-      "product": "TW-ISODUCE PLUS 曖舒優煥活粉, TW-iBLINGs\\V4, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-09-05",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2545913",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3474872144",
-      "buyer": "梁家福",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-09-04",
-      "status": "查詢失敗",
-      "status_cls": "error"
-    },
-    {
-      "id": "2544748",
-      "type": "宅配(HCT)",
-      "shop": "",
-      "tracking": "3473590116",
-      "buyer": "黃冠憲",
-      "product": "TW-iBLINGs\\V4, TW-ISODUCE PLUS 曖舒優煥活粉, TW-LOQUAT 虎奶菇漢方喉糖(F)_AUG/26",
-      "order_date": "2026-09-04",
       "status": "查詢失敗",
       "status_cls": "error"
     }
