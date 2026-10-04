@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-03 06:03",
-  "period_from": "2026-09-03",
-  "period_to": "2026-10-03",
+  "updated": "2026-10-04 06:39",
+  "period_from": "2026-09-04",
+  "period_to": "2026-10-04",
   "orders": [
     {
       "id": "2602960",
@@ -79,19 +79,6 @@
       "order_date": "2026-09-07",
       "status": "🚚 運送中",
       "status_cls": "transit"
-    },
-    {
-      "id": "2541651",
-      "type": "7-11",
-      "shop": "華社",
-      "tracking": "f26784436000001",
-      "buyer": "郭春風",
-      "product": "TW-iBLINGs\\V4",
-      "order_date": "2026-09-03",
-      "status": "✅ 已取件",
-      "status_cls": "done",
-      "arrived_date": "2026-09-07",
-      "return_deadline": "2026-09-14"
     },
     {
       "id": "2544013",
